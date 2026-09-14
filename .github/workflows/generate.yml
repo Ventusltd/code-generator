@@ -1,7 +1,8 @@
 name: Generate app
 
-# Assemble a new app from numbered parts of the modular star, prove it parses and imports, and commit it
-# with its report and recipe. Run from the Actions tab (or: gh workflow run generate.yml -f name=geodesy -f families=511,8770).
+# Assemble a new app from blocks of the periodic table (or numbered families), prove the assembly page is sound,
+# raise a work order for everything that is missing, and commit it all with its report and recipe.
+# Run from the Actions tab (or: gh workflow run generate.yml -f name=substation-finder -f blocks=Si,Vn,Ug,Ps,Dt).
 on:
   workflow_dispatch:
     inputs:
@@ -20,6 +21,7 @@ on:
 
 permissions:
   contents: write
+  issues: write
 
 concurrency:
   group: generate
@@ -47,9 +49,27 @@ jobs:
           fi
           if [ -f "apps/${{ inputs.name }}/${{ inputs.name }}.py" ]; then python3 -c "import ast,sys; ast.parse(open('apps/${{ inputs.name }}/${{ inputs.name }}.py').read()); print('Python parses')"; fi
 
-      - name: Commit
+      # The assembly page must exist, its plan and inline script must parse, every planned file must be on disk,
+      # and every name still needed must have a labelled input. A missing input fails the run; it is never skipped.
+      - name: Check the assembly page
+        run: node tools/check-assembly.mjs "apps/${{ inputs.name }}"
+
+      # One GitHub issue per new work order, labelled work-order. A request that already records an issue, or whose
+      # id is already in an issue title, is not raised again.
+      - name: Raise work orders as issues
+        if: always()
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
         run: |
-          git add apps spider
+          ls requests/${{ inputs.name }}-*.json >/dev/null 2>&1 || { echo "No work orders for ${{ inputs.name }}."; exit 0; }
+          node tools/raise-work-orders.mjs requests/${{ inputs.name }}-*.json
+          node generate.mjs --name "${{ inputs.name }}" --blocks "${{ inputs.blocks }}" --families "${{ inputs.families }}" --title "${{ inputs.title || inputs.name }}" >/dev/null
+
+      - name: Commit
+        if: always()
+        run: |
+          git add apps spider requests
           if git diff --cached --quiet; then echo "No change."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
@@ -61,3 +81,4 @@ jobs:
         if: always()
         run: |
           [ -f "apps/${{ inputs.name }}/REPORT.md" ] && cat "apps/${{ inputs.name }}/REPORT.md" >> "$GITHUB_STEP_SUMMARY" || echo "No report produced." >> "$GITHUB_STEP_SUMMARY"
+          [ -f "apps/${{ inputs.name }}/WORK-ORDERS.md" ] && cat "apps/${{ inputs.name }}/WORK-ORDERS.md" >> "$GITHUB_STEP_SUMMARY" || true

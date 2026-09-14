@@ -59,14 +59,20 @@
 <div class="card" id="out" hidden>
   <label>Your app</label>
   <p id="summary"></p>
-  <button class="btn" id="copyCmd">Copy the build command</button><button class="btn" id="copyBom">Copy the bill of materials</button>
+  <div class="row">
+    <div><label>Built from existing code</label><div id="built"></div></div>
+    <div><label>To be written</label><div id="todo"></div></div>
+  </div>
+  <button class="btn" id="copyCmd">Copy the build command</button><button class="btn" id="copyBom">Copy the bill of materials</button><button class="btn" id="orders">See the work orders on GitHub</button>
   <pre id="bom"></pre>
-  <p class="muted">The build command makes the app durable in this repository, with every block's files copied exactly from GitHub, a report and a recipe. The bill of materials is the same thing in plain words.</p>
+  <p class="muted">The build command makes the app durable in this repository: every block's files copied exactly from GitHub, an assembly page that loads them and shows what fails, a report, a recipe, and one work order for each thing to be written, raised as a GitHub issue labelled <code>work-order</code> for the agents. The bill of materials is the same thing in plain words.</p>
 </div>
 
 <p class="muted">Blocks come from the <a href="https://ventusltd.github.io/stars/table.html">periodic table of globalgrid2050 architecture development</a>. What a block still needs from its surroundings is listed, never guessed. Underneath every block are its numbered functions; you do not need to know them to build with it.</p>
-<script>
+<script type="module">
+import { classify, PLAIN, LIBRARIES } from './rules.mjs';
 const STARS = 'https://ventusltd.github.io/stars/';
+const ORDERS = 'https://github.com/Ventusltd/code-generator/issues?q=is%3Aissue+label%3Awork-order';
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 let data, presets; const chosen = new Map();
@@ -108,6 +114,7 @@ async function chemistry() {
   $('#likes').innerHTML = likes.length ? likes.map(({ a, overlap }) => `<div class="part" style="--c:#b8ccff"><b>${esc(a.title)}</b> <span class="muted">shares ${overlap} of your block${overlap === 1 ? '' : 's'} · ${a.blocks.length} blocks in all</span><div>${a.live ? `<a href="${esc(a.live)}" target="_blank" rel="noopener">Open the live app</a> · ` : ''}<a href="${esc(a.gh)}" target="_blank" rel="noopener">Source</a> · <a href="#" data-sim="${esc(a.blocks.join(','))}">Simulate a similar app</a></div></div>`).join('') : '<p class="muted">No existing app mixes these blocks yet.</p>';
   $('#likes').querySelectorAll('[data-sim]').forEach(el => el.onclick = e => { e.preventDefault(); chosen.clear(); for (const s of el.dataset.sim.split(',')) add(s); });
   const untested = rows.filter(r => r.verdict === 'untested' || r.verdict === 'fails');
+  lastUntested = untested;
   const have = new Set([...chosen.values()].flatMap(b => b.inside.map(f => f.name)));
   const needs = [...new Map([...chosen.values()].flatMap(b => b.needs).filter(n => !have.has(n.name)).map(n => [n.name, n])).values()];
   if (untested.length || needs.length) {
@@ -124,10 +131,24 @@ function build() {
   const cmd = `gh workflow run generate.yml -R Ventusltd/code-generator -f name=${name} -f blocks=${syms.join(',')}`;
   const bom = [`Bill of materials — ${name}`, ''].concat([...chosen.values()].map(b => `${b.symbol} #${b.number}  ${b.title}\n    ${b.description}\n    ${b.functions} functions · files: ${b.files.map(f => f.repo.split('/')[1] + '/' + f.path).join(', ')}`)).join('\n');
   $('#summary').innerHTML = `<b>${esc(name)}</b> from ${chosen.size} block${chosen.size === 1 ? '' : 's'}: ${[...chosen.values()].map(b => esc(b.title)).join(', ')}.`;
+  // Built from existing code: every chosen block, copied unchanged. To be written: what no block defines, and what no evidence covers.
+  $('#built').innerHTML = [...chosen.values()].map(b => `<div class="part" style="--c:${cat(b.category).colour}"><b>${esc(b.title)}</b> <span class="muted">${esc(b.symbol)} · ${b.functions} functions in ${b.files.length} file${b.files.length === 1 ? '' : 's'}, copied as they are</span></div>`).join('');
+  const have = new Set([...chosen.values()].flatMap(b => b.inside.map(f => f.name)));
+  const definers = nm => data.blocks.filter(b => !chosen.has(b.symbol) && b.kind !== 'auto' && b.inside.some(f => f.name === nm)).map(b => b.symbol);
+  const needs = [...new Map([...chosen.values()].flatMap(b => b.needs).filter(n => !have.has(n.name)).map(n => [n.name, n])).values()].map(n => ({ ...n, defs: definers(n.name), kind: classify(n.name, { definers: definers(n.name) }) }));
+  const todo = [];
+  for (const n of needs.filter(n => n.kind === 'library')) todo.push(`<div class="part" style="--c:#ffd54a"><b>${esc(n.name)}</b> <span class="muted">a library to supply: ${esc(LIBRARIES[n.name])}</span></div>`);
+  for (const n of needs.filter(n => n.kind === 'missing')) todo.push(`<div class="part" style="--c:#ffd54a"><b>${esc(n.name)}</b> <span class="muted">${esc(n.meaning !== n.name ? n.meaning : 'a value or function no block defines')} — to be written by an agent</span></div>`);
+  for (const n of needs.filter(n => n.kind === 'block')) todo.push(`<div class="part" style="--c:#00e5ff"><b>${esc(n.name)}</b> <span class="muted">already exists in block ${esc(n.defs.join(', '))}: add it rather than write it</span></div>`);
+  for (const r of lastUntested) todo.push(`<div class="part" style="--c:#ffd54a"><b>${esc(chosen.get(r.a).title)} + ${esc(chosen.get(r.b).title)}</b> <span class="muted">never loaded together: a test to be written and recorded</span></div>`);
+  const hidden = needs.filter(n => /^(browser|node|word)$/.test(n.kind)).length;
+  $('#todo').innerHTML = (todo.join('') || '<p class="green">Nothing: every name is provided and every pair has evidence.</p>') + (hidden ? `<p class="muted">${hidden} other name${hidden === 1 ? '' : 's'} the table lists are provided by the browser or are words from comments; the build sorts them and writes nothing for them.</p>` : '');
   $('#bom').textContent = bom + '\n\n' + cmd; $('#out').hidden = false;
   $('#copyCmd').onclick = () => navigator.clipboard.writeText(cmd).then(() => $('#copyCmd').textContent = 'Copied');
   $('#copyBom').onclick = () => navigator.clipboard.writeText(bom).then(() => $('#copyBom').textContent = 'Copied');
+  $('#orders').onclick = () => window.open(ORDERS, '_blank', 'noopener');
 }
+let lastUntested = [];
 (async () => {
   try {
     [data, presets] = await Promise.all([fetch(STARS + 'blocks/blocks.json', {cache: 'no-cache'}).then(r => r.json()), fetch(STARS + 'blocks/presets.json', {cache: 'no-cache'}).then(r => r.json())]);

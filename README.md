@@ -12,13 +12,21 @@ recorded, keyed by its permanent family number, with its line keys, its source l
 
 | file | what |
 |---|---|
-| `<name>.mjs` (and `.py` for Python parts) | the parts, unchanged, exported |
-| `context.mjs` | the values the parts still need from their surroundings, declared undefined, to be decided |
-| `REPORT.md` | the code report: parts, needs, open decisions, sources, live pages, line keys |
+| `<symbol>/…` | each block's files, unchanged, one per source lineage at the commit the star recorded |
+| `index.html` | the assembly page: loads the files in dependency order, asks for the values still needed, shows which files loaded and which threw |
+| `REPORT.md` | the code report: bill of materials, load order, needs sorted by what to do about them, chemistry, open decisions (linked to `Ventusltd/stars/decisions`), work orders |
+| `WORK-ORDERS.md` | what is to be written, in plain words, one order each |
 | `parts.json` | the recipe, so the app can be regenerated from its keys |
 
-The workflow proves the module parses and imports. That proves it is assembled correctly, not that it is right
-for its new purpose.
+And `requests/<name>-<n>.json`, one per work order: what is missing, where it will be used (blocks, files at commit),
+what it must provide, the acceptance check, a brief. The workflow raises each as a GitHub issue labelled
+[work-order](https://github.com/Ventusltd/code-generator/issues?q=is%3Aissue+label%3Awork-order) for the agents,
+once (the issue number is written back into the request). `rules.mjs` holds the sorting of needs that the generator
+and the picker share; `tools/check-assembly.mjs` is the workflow's check of the assembly page: its plan and script must
+parse, every planned file must exist, and every name still needed must have a labelled input, or the run fails.
+
+The workflow proves the files parse and the assembly page is sound. That proves the app is assembled correctly, not
+that it is right for its new purpose; the assembly page, opened, shows what actually loads.
 
 **Rules the generator keeps**
 - Nothing is invented. What a part needs from outside itself is listed, never guessed.
