@@ -98,9 +98,9 @@ for (const a of apps) {
   }
 }
 mkdirSync('spider/graphs', { recursive: true });
-writeFileSync('spider/graphs/apps.json', JSON.stringify({ schema: 'code-generator-graph.v1', label: 'Generated apps', generated_utc: stamp, nodes, edges }));
+writeFileSync('spider/graphs/apps.json', JSON.stringify({ schema: 'code-generator-graph.v1', label: 'Applications', generated_utc: stamp, nodes, edges }));
 const q = s => JSON.stringify(s);
 writeFileSync('spider/features.yml', ['# Graphs this repository publishes for the Spider dashboard. Written by generate.mjs.', 'schema_version: spider-features-v1', `site: ${q(SITE)}`, 'graphs:',
-  '  - id: "generated-apps"', '    title: "Generated apps"', `    path: ${q(SITE + 'spider/graphs/apps.json')}`, '    edges_path: null', '    source_spider: "code-generator (generate.mjs)"',
+  '  - id: "generated-apps"', '    title: "Applications"', `    path: ${q(SITE + 'spider/graphs/apps.json')}`, '    edges_path: null', '    source_spider: "code-generator (generate.mjs)"',
   `    description: ${q('Apps built from blocks of the periodic table, wired to the blocks they are made of. Amber apps still need values from their surroundings; the report lists them.')}`, `    nodes: ${nodes.length}`, `    edges: ${edges.length}`].join('\n') + '\n');
 console.log(`apps/${name}: ${parts.length} part(s), ${parts.reduce((s, p) => s + p.files.filter(f => f.saved).length, 0)} file(s) copied${needs.length ? `, still needs ${needs.map(n => n.name).join(', ')}` : ', complete'}.`);
