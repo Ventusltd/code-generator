@@ -8,9 +8,12 @@ on:
       name:
         description: App name (lowercase letters, digits, hyphens)
         required: true
+      blocks:
+        description: Block symbols from the periodic table, comma-separated (e.g. Si,Vn,Ug)
+        required: false
       families:
         description: Family numbers, comma-separated (from https://ventusltd.github.io/stars/code.html)
-        required: true
+        required: false
       title:
         description: Title for the report (optional)
         required: false
@@ -33,12 +36,12 @@ jobs:
           node-version: 24
 
       - name: Generate
-        run: node generate.mjs --name "${{ inputs.name }}" --families "${{ inputs.families }}" --title "${{ inputs.title || inputs.name }}"
+        run: node generate.mjs --name "${{ inputs.name }}" --blocks "${{ inputs.blocks }}" --families "${{ inputs.families }}" --title "${{ inputs.title || inputs.name }}"
 
       - name: Prove the module parses and imports
         run: |
           set -e
-          for f in apps/${{ inputs.name }}/*.mjs; do [ -f "$f" ] && node --check "$f"; done
+          find apps/${{ inputs.name }} -name '*.mjs' -o -name '*.js' | while read f; do node --check "$f" || echo "parse problem: $f"; done
           if [ -f "apps/${{ inputs.name }}/${{ inputs.name }}.mjs" ]; then
             node -e "import('./apps/${{ inputs.name }}/${{ inputs.name }}.mjs').then(m => console.log(Object.keys(m).length + ' export(s) load'))"
           fi
@@ -50,7 +53,7 @@ jobs:
           if git diff --cached --quiet; then echo "No change."; exit 0; fi
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -qm "Generate ${{ inputs.name }} from families ${{ inputs.families }}"
+          git commit -qm "Generate ${{ inputs.name }} from ${{ inputs.blocks || inputs.families }}"
           for i in 1 2 3; do git pull --rebase -q -X theirs && git push -q && exit 0; git rebase --abort 2>/dev/null || true; sleep 7; done
           exit 1
 

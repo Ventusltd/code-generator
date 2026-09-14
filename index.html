@@ -5,96 +5,141 @@
 <title>Code generator</title>
 <style>
   :root{color-scheme:dark}
-  body{margin:0;padding:16px 18px 40px;background:#0b0d12;color:#d8dee9;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace}
+  body{margin:0;padding:16px 18px 40px;background:#0b0d12;color:#eef2fb;font:15px/1.5 Inter,ui-sans-serif,system-ui,sans-serif}
   a{color:#00e5ff}
   h1{font-size:22px;margin:0 0 4px}
-  .ey{color:#7da0c8;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
-  input{width:100%;box-sizing:border-box;padding:10px;background:#12151c;border:1px solid #2a3140;color:inherit;font:inherit;border-radius:6px;margin:8px 0}
-  .row{display:flex;gap:12px;flex-wrap:wrap}.row>*{flex:1 1 280px;min-width:0}
-  .card{border:1px solid #2a3140;border-radius:8px;padding:14px;margin:12px 0;background:#0f1218}
-  .hits button,.basket button{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid #1a1f2a;color:#d8dee9;padding:6px 4px;font:inherit;cursor:pointer}
-  .hits button:hover{color:#00e5ff}
-  .green{color:#39d353}.amber{color:#ffd54a}.muted{color:#8b93a7}
-  pre{background:#070910;border:1px solid #1a1f2a;border-radius:6px;padding:10px;overflow:auto;font-size:12.5px;max-height:50vh}
-  .act{background:#12151c;border:1px solid #385464;color:#d8dee9;padding:8px 12px;border-radius:6px;font:inherit;cursor:pointer;margin:4px 6px 4px 0}
-  .act:hover{border-color:#00e5ff}
-  code{background:#12151c;padding:1px 4px;border-radius:3px}
+  .ey{font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:#00e5ff}
+  .muted{color:#9aa3b5}
+  label{display:block;font-family:ui-monospace,monospace;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#9aa3b5;margin:14px 0 6px}
+  select,input{width:100%;box-sizing:border-box;padding:11px 12px;background:#12151c;border:1px solid #262b36;color:inherit;font:inherit;border-radius:10px}
+  select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,#9aa3b5 50%),linear-gradient(135deg,#9aa3b5 50%,transparent 50%);background-position:calc(100% - 18px) 55%,calc(100% - 13px) 55%;background-size:5px 5px;background-repeat:no-repeat}
+  .card{border:1px solid #262b36;border-radius:14px;padding:14px 16px;margin:12px 0;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.014))}
+  .row{display:flex;gap:12px;flex-wrap:wrap}.row>*{flex:1 1 240px;min-width:0}
+  .btn{background:#0f1218;border:1px solid #385464;color:#eef2fb;padding:9px 14px;border-radius:999px;font:inherit;cursor:pointer;margin:8px 8px 0 0}
+  .btn:hover{border-color:#00e5ff}.btn.primary{border-color:#00e5ff;background:rgba(0,229,255,.12)}.btn:disabled{opacity:.4;cursor:not-allowed}
+  .part{border-left:3px solid var(--c,#262b36);padding:8px 12px;margin:8px 0;background:#0f1218;border-radius:0 10px 10px 0}
+  .part b{font-size:15px}.part .sym{font-family:ui-monospace,monospace;color:#9aa3b5;margin-right:6px}
+  .part .x{float:right;color:#9aa3b5;cursor:pointer}
+  .green{color:#39d353}.amber{color:#ffd54a}
+  details{margin-top:6px}summary{cursor:pointer;color:#9aa3b5;font-size:13px}
+  .inside{font-family:ui-monospace,monospace;font-size:12px;columns:2;column-gap:18px}
+  pre{background:#070910;border:1px solid #1a1f2a;border-radius:8px;padding:10px;overflow:auto;font-size:12px;max-height:40vh}
+  @media(max-width:600px){.inside{columns:1}}
 </style>
 <div class="ey">Ventus · Global Grid 2050 · Code generator</div>
-<h1>Build an app from numbered parts</h1>
-<div class="muted" id="status">Loading the modular star's index…</div>
-<div class="row">
-  <div class="card">
-    <div class="ey">1 · select functions</div>
-    <input id="q" placeholder="Function name or family number" autocomplete="off">
-    <div class="hits" id="hits"></div>
+<h1>Build an app from blocks</h1>
+<div class="muted" id="status">Loading the periodic table…</div>
+
+<div class="card">
+  <label for="preset">What are you building?</label>
+  <select id="preset"><option value="">Choose a starting point…</option></select>
+  <div class="row">
+    <div><label for="category">Category</label><select id="category"></select></div>
+    <div><label for="block">Block</label><select id="block"></select></div>
   </div>
-  <div class="card">
-    <div class="ey">2 · the app</div>
-    <input id="name" placeholder="app name, e.g. geodesy" value="my-app">
-    <div class="basket" id="basket"><span class="muted">Nothing selected yet.</span></div>
-    <div id="needs"></div>
-    <button class="act" id="build" disabled>Assemble</button>
-  </div>
+  <button class="btn" id="add">Add this block</button>
 </div>
+
+<div class="card">
+  <label for="name">Name of the app</label>
+  <input id="name" value="my-app" placeholder="lowercase letters, digits and hyphens">
+  <div id="parts"><p class="muted">Nothing chosen yet. Pick a starting point above, or add blocks one at a time.</p></div>
+  <div id="needs"></div>
+  <button class="btn primary" id="build" disabled>Build it</button>
+</div>
+
+<div class="card" id="chem" hidden>
+  <label>Chemistry: will these blocks work together?</label>
+  <div id="pairs"></div>
+  <label>Apps that already mix these blocks</label>
+  <div id="likes"></div>
+  <div id="missing"></div>
+</div>
+
 <div class="card" id="out" hidden>
-  <div class="ey">3 · apply to a new app</div>
-  <p>Copy or download the module below, or make it durable in this repository with its report and recipe:</p>
-  <pre id="cmd"></pre>
-  <button class="act" id="copyCode">Copy module</button><button class="act" id="download">Download module</button><button class="act" id="copyCmd">Copy workflow command</button>
-  <pre id="module"></pre>
+  <label>Your app</label>
+  <p id="summary"></p>
+  <button class="btn" id="copyCmd">Copy the build command</button><button class="btn" id="copyBom">Copy the bill of materials</button>
+  <pre id="bom"></pre>
+  <p class="muted">The build command makes the app durable in this repository, with every block's files copied exactly from GitHub, a report and a recipe. The bill of materials is the same thing in plain words.</p>
 </div>
-<p class="muted">Parts are copied exactly from GitHub at the commit the <a href="https://github.com/Ventusltd/stars/blob/main/MODULAR-STAR.md">modular star</a> recorded. What a part still needs from its surroundings is listed, never guessed. Generated apps: <a href="./apps/">apps/</a> · Spider graph: <a href="./spider/graphs/apps.json">apps.json</a></p>
+
+<p class="muted">Blocks come from the <a href="https://ventusltd.github.io/stars/table.html">periodic table of the estate</a>. What a block still needs from its surroundings is listed, never guessed. Underneath every block are its numbered functions; you do not need to know them to build with it.</p>
 <script>
 const STARS = 'https://ventusltd.github.io/stars/';
 const $ = s => document.querySelector(s);
 const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-let index, names; const buckets = new Map(), basket = new Map();
-async function family(n) { const b = Math.floor(n / index.bucket_size); if (!buckets.has(b)) buckets.set(b, fetch(`${STARS}code/f/${b}.json`).then(r => r.ok ? r.json() : {})); return (await buckets.get(b))[n] || null; }
-function search(q) {
-  q = q.trim(); const h = $('#hits'); h.innerHTML = ''; if (!q) return;
-  const ql = q.toLowerCase();
-  const found = /^#?\d+$/.test(q) ? [[q.replace('#', ''), [Number(q.replace('#', ''))]]] : Object.keys(names).filter(k => k.toLowerCase().includes(ql)).sort((a, b) => (a.toLowerCase().startsWith(ql) ? 0 : 1) - (b.toLowerCase().startsWith(ql) ? 0 : 1) || a.length - b.length).slice(0, 25).map(k => [k, names[k].slice(0, 6)]);
-  for (const [k, ns] of found) for (const n of ns) { const b = document.createElement('button'); b.textContent = `+ #${n} ${k}`; b.onclick = () => add(n); h.append(b); }
-  if (!found.length) h.innerHTML = '<span class="amber">No existing code with that name: this needs to be written new.</span>';
+let data, presets; const chosen = new Map();
+const cat = id => data.categories.find(c => c.id === id);
+function fillBlocks() {
+  const c = $('#category').value, s = $('#block'); s.innerHTML = '';
+  for (const b of data.blocks.filter(b => b.category === c && b.functions > 0 && (b.kind !== 'auto' || b.functions >= 8))) { const o = document.createElement('option'); o.value = b.symbol; o.textContent = `${b.title} (${b.functions} functions)`; s.append(o); }
 }
-async function add(n) { if (basket.has(n)) return; const f = await family(n); if (!f) return; basket.set(n, f); render(); }
+function add(sym) { const b = data.blocks.find(x => x.symbol === sym); if (b && !chosen.has(sym)) { chosen.set(sym, b); render(); } }
 function render() {
-  const b = $('#basket'); b.innerHTML = '';
-  for (const [n, f] of basket) { const x = document.createElement('button'); x.innerHTML = `<span class="${f.standalone ? 'green' : 'amber'}">●</span> #${n} ${esc(f.names[0])} <span class="muted">· ${f.places.length} place(s)${f.needs && f.needs.length ? ' · needs ' + esc(f.needs.join(', ')) : ''} · remove</span>`; x.onclick = () => { basket.delete(n); render(); }; b.append(x); }
-  if (!basket.size) b.innerHTML = '<span class="muted">Nothing selected yet.</span>';
-  const defined = new Set([...basket.values()].map(f => f.names[0]));
-  const needs = [...new Set([...basket.values()].flatMap(f => f.needs || []))].filter(x => !defined.has(x)).sort();
-  $('#needs').innerHTML = needs.length ? `<p><span class="amber">Still needed from the surroundings:</span> ${needs.map(esc).join(', ')}${needs.some(x => /EARTH|RADIUS/i.test(x)) ? ' <span class="muted">(the earth radius is an open decision)</span>' : ''}</p>` : (basket.size ? '<p class="green">Complete: every part is self-contained.</p>' : '');
-  $('#build').disabled = !basket.size;
-}
-async function assemble() {
-  const name = $('#name').value.trim() || 'my-app';
-  const parts = [];
-  for (const [n, f] of basket) {
-    const p = f.places[0]; const url = `https://raw.githubusercontent.com/${p.repo}/${p.commit}/${p.path.split('/').map(encodeURIComponent).join('/')}`;
-    const r = await fetch(url); const lines = (await r.text()).split('\n').slice(p.first - 1, p.last);
-    parts.push({ n, f, p, text: lines.join('\n'), link: `https://github.com/${p.repo}/blob/${p.commit}/${p.path}#L${p.first}-L${p.last}` });
+  const p = $('#parts'); p.innerHTML = '';
+  for (const [sym, b] of chosen) {
+    const c = cat(b.category);
+    p.insertAdjacentHTML('beforeend', `<div class="part" style="--c:${c.colour}"><span class="x" data-x="${esc(sym)}">remove</span><span class="sym">${esc(sym)} · #${b.number}</span><b>${esc(b.title)}</b><div>${esc(b.description)}</div><div class="muted">${b.functions} functions · ${b.files.length} file${b.files.length === 1 ? '' : 's'}${b.repos.length ? ' · from ' + b.repos.map(r => esc(r.split('/')[1])).join(', ') : ''}</div>
+      ${b.inside.length ? `<details><summary>What is inside</summary><div class="inside">${b.inside.slice(0, 24).map(f => `<div><a href="${STARS}code.html?family=${f.family}" target="_blank" rel="noopener">#${f.family}</a> ${esc(f.name)}</div>`).join('')}</div></details>` : ''}</div>`);
   }
-  const defined = new Set(parts.map(x => x.f.names[0]));
-  const needs = [...new Set(parts.flatMap(x => x.f.needs || []))].filter(x => !defined.has(x)).sort();
-  let out = `// ${name} — assembled ${new Date().toISOString()} from the modular star. Family numbers are permanent keys.\n`;
-  if (needs.length) out += `// Still needed from the surroundings: ${needs.join(', ')}\n` + needs.map(x => `const ${x} = undefined; // TODO decide`).join('\n') + '\n';
-  for (const x of parts) out += `\n// ── family #${x.n} ${x.f.names[0]} · used in ${x.f.places.length} place(s) · ${x.link}\n` + (/^\s*(async\s+)?(function|class)\b/.test(x.text) ? 'export ' : '') + x.text.replace(/\s+$/, '') + '\n';
-  $('#module').textContent = out; $('#out').hidden = false;
-  const cmd = `gh workflow run generate.yml -R Ventusltd/code-generator -f name=${name} -f families=${[...basket.keys()].join(',')}`;
-  $('#cmd').textContent = cmd;
-  $('#copyCode').onclick = () => navigator.clipboard.writeText(out).then(() => $('#copyCode').textContent = 'Copied');
+  p.querySelectorAll('.x').forEach(x => x.onclick = () => { chosen.delete(x.dataset.x); render(); });
+  if (!chosen.size) p.innerHTML = '<p class="muted">Nothing chosen yet. Pick a starting point above, or add blocks one at a time.</p>';
+  const have = new Set([...chosen.values()].flatMap(b => b.inside.map(f => f.name)));
+  const needs = [...new Map([...chosen.values()].flatMap(b => b.needs).filter(n => !have.has(n.name)).map(n => [n.name, n])).values()];
+  $('#needs').innerHTML = chosen.size ? (needs.length ? `<p><span class="amber">Still needed from outside:</span> ${needs.slice(0, 10).map(n => esc(n.meaning)).join('; ')}</p>` : '<p class="green">Complete: these blocks need nothing from outside.</p>') : '';
+  $('#build').disabled = !chosen.size;
+  chemistry();
+}
+let reactions = null;
+async function chemistry() {
+  const c = $('#chem'); if (chosen.size < 1) { c.hidden = true; return; }
+  if (!reactions) { try { reactions = await (await fetch(STARS + 'blocks/reactions.json', {cache: 'no-cache'})).json(); } catch { return; } }
+  c.hidden = false;
+  const syms = [...chosen.keys()];
+  const verdictColour = { proven: '#39d353', 'seen together': '#00e5ff', unstable: '#ffd54a', fails: '#ff5555', untested: '#9aa3b5' };
+  const rows = [];
+  for (let i = 0; i < syms.length; i++) for (let j = i + 1; j < syms.length; j++) {
+    const r = reactions.reactions.find(x => (x.a === syms[i] && x.b === syms[j]) || (x.a === syms[j] && x.b === syms[i])) || { a: syms[i], b: syms[j], probability: 0.25, verdict: 'untested', basis: 'no evidence either way', examples: [] };
+    rows.push(r);
+  }
+  $('#pairs').innerHTML = rows.length ? rows.map(r => `<div class="part" style="--c:${verdictColour[r.verdict]}"><b>${esc(chosen.get(r.a).title)} + ${esc(chosen.get(r.b).title)}</b> <span style="color:${verdictColour[r.verdict]}">${Math.round(r.probability * 100)}% · ${esc(r.verdict)}</span><div class="muted">${esc(r.basis)}${r.decay ? ' · most common failure: ' + esc(r.decay) : ''}${r.examples[0] ? ' · e.g. <a href="' + esc(r.examples[0].live || r.examples[0].gh) + '" target="_blank" rel="noopener">' + esc(r.examples[0].title) + '</a>' : ''}</div></div>`).join('') : '<p class="muted">Add a second block to see how they mix.</p>';
+  const likes = reactions.apps.map(a => ({ a, overlap: a.blocks.filter(s => chosen.has(s)).length })).filter(x => x.overlap > 0).sort((x, y) => y.overlap - x.overlap || x.a.blocks.length - y.a.blocks.length).slice(0, 4);
+  $('#likes').innerHTML = likes.length ? likes.map(({ a, overlap }) => `<div class="part" style="--c:#b8ccff"><b>${esc(a.title)}</b> <span class="muted">shares ${overlap} of your block${overlap === 1 ? '' : 's'} · ${a.blocks.length} blocks in all</span><div>${a.live ? `<a href="${esc(a.live)}" target="_blank" rel="noopener">Open the live app</a> · ` : ''}<a href="${esc(a.gh)}" target="_blank" rel="noopener">Source</a> · <a href="#" data-sim="${esc(a.blocks.join(','))}">Simulate a similar app</a></div></div>`).join('') : '<p class="muted">No existing app mixes these blocks yet.</p>';
+  $('#likes').querySelectorAll('[data-sim]').forEach(el => el.onclick = e => { e.preventDefault(); chosen.clear(); for (const s of el.dataset.sim.split(',')) add(s); });
+  const untested = rows.filter(r => r.verdict === 'untested' || r.verdict === 'fails');
+  const have = new Set([...chosen.values()].flatMap(b => b.inside.map(f => f.name)));
+  const needs = [...new Map([...chosen.values()].flatMap(b => b.needs).filter(n => !have.has(n.name)).map(n => [n.name, n])).values()];
+  if (untested.length || needs.length) {
+    const prompt = `Test this combination of Ventus blocks for me. Blocks: ${[...chosen.values()].map(b => `${b.symbol} ${b.title} (${b.functions} functions; files: ${b.files.map(f => f.repo + '/' + f.path + '@' + f.commit.slice(0, 7)).join(', ')})`).join('; ')}. ` +
+      (untested.length ? `Untested pairs: ${untested.map(r => r.a + '+' + r.b).join(', ')}. ` : '') + (needs.length ? `Values still needed from outside: ${needs.map(n => n.name + ' (' + n.meaning + ')').join(', ')}. ` : '') +
+      'Write a small test page that loads these files together, report every error, and say which value each missing name must take. Do not change the files.';
+    $('#missing').innerHTML = `<label>What is missing</label><p><span class="amber">${untested.length ? untested.length + ' untested combination' + (untested.length === 1 ? '' : 's') : ''}${untested.length && needs.length ? ' and ' : ''}${needs.length ? needs.length + ' value' + (needs.length === 1 ? '' : 's') + ' still needed from outside' : ''}.</span> This is new ground: no app has done it yet. Use an LLM to test the code before relying on it.</p><button class="btn" id="copyPrompt">Copy a prompt for the LLM</button>`;
+    $('#copyPrompt').onclick = () => navigator.clipboard.writeText(prompt).then(() => $('#copyPrompt').textContent = 'Copied');
+  } else $('#missing').innerHTML = '<p class="green">Every pair has evidence and nothing is missing.</p>';
+}
+function build() {
+  const name = ($('#name').value.trim() || 'my-app').toLowerCase().replace(/[^a-z0-9-]+/g, '-');
+  const syms = [...chosen.keys()];
+  const cmd = `gh workflow run generate.yml -R Ventusltd/code-generator -f name=${name} -f blocks=${syms.join(',')}`;
+  const bom = [`Bill of materials — ${name}`, ''].concat([...chosen.values()].map(b => `${b.symbol} #${b.number}  ${b.title}\n    ${b.description}\n    ${b.functions} functions · files: ${b.files.map(f => f.repo.split('/')[1] + '/' + f.path).join(', ')}`)).join('\n');
+  $('#summary').innerHTML = `<b>${esc(name)}</b> from ${chosen.size} block${chosen.size === 1 ? '' : 's'}: ${[...chosen.values()].map(b => esc(b.title)).join(', ')}.`;
+  $('#bom').textContent = bom + '\n\n' + cmd; $('#out').hidden = false;
   $('#copyCmd').onclick = () => navigator.clipboard.writeText(cmd).then(() => $('#copyCmd').textContent = 'Copied');
-  $('#download').onclick = () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([out], {type: 'text/javascript'})); a.download = `${name}.mjs`; a.click(); };
+  $('#copyBom').onclick = () => navigator.clipboard.writeText(bom).then(() => $('#copyBom').textContent = 'Copied');
 }
 (async () => {
   try {
-    [index, names] = await Promise.all([fetch(STARS + 'code/index.json').then(r => r.json()), fetch(STARS + 'code/names.json').then(r => r.json())]);
-    $('#status').textContent = `${index.families.toLocaleString('en-GB')} families · ${index.elements.toLocaleString('en-GB')} functions and classes · index updated ${index.generated_utc.slice(0, 16).replace('T', ' ')} UTC`;
-    $('#q').oninput = e => search(e.target.value); $('#build').onclick = assemble;
-    const pre = new URLSearchParams(location.search).get('families'); if (pre) for (const n of pre.split(',')) await add(Number(n));
-  } catch (e) { $('#status').textContent = 'The modular star index is not reachable: ' + e.message; }
+    [data, presets] = await Promise.all([fetch(STARS + 'blocks/blocks.json', {cache: 'no-cache'}).then(r => r.json()), fetch(STARS + 'blocks/presets.json', {cache: 'no-cache'}).then(r => r.json())]);
+    const named = data.blocks.filter(b => b.kind !== 'auto').length;
+    $('#status').textContent = `${named} named blocks · ${data.blocks.reduce((s, b) => s + b.functions, 0).toLocaleString('en-GB')} functions underneath · table updated ${data.generated_utc.slice(0, 16).replace('T', ' ')} UTC`;
+    for (const p of presets.presets) { const o = document.createElement('option'); o.value = p.id; o.textContent = `${p.title} — ${p.blurb}`; $('#preset').append(o); }
+    for (const c of data.categories) if (data.blocks.some(b => b.category === c.id && b.functions > 0)) { const o = document.createElement('option'); o.value = c.id; o.textContent = c.title; $('#category').append(o); }
+    fillBlocks();
+    $('#category').onchange = fillBlocks; $('#add').onclick = () => add($('#block').value); $('#build').onclick = build;
+    $('#preset').onchange = () => { const p = presets.presets.find(x => x.id === $('#preset').value); if (!p) return; chosen.clear(); for (const s of p.blocks) add(s); $('#name').value = p.id; render(); };
+    const pre = new URLSearchParams(location.search).get('blocks'); if (pre) for (const s of pre.split(',')) add(s);
+  } catch (e) { $('#status').textContent = 'The periodic table is not reachable: ' + e.message; }
 })();
 </script>
 </html>
