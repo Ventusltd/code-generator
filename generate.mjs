@@ -90,6 +90,8 @@ const nodes = [], edges = [], seen = new Set();
 for (const a of apps) {
   nodes.push({ id: `app:${a.name}`, label: a.title, type: 'app', rag: (a.needs || []).length ? 'amber' : 'green', reason: `${a.parts.length} part(s)` + ((a.needs || []).length ? ` · still needs ${a.needs.map(n => n.meaning || n).slice(0, 5).join(', ')}` : ' · complete'), gh: `https://github.com/Ventusltd/code-generator/tree/main/apps/${a.name}`, ext: `${SITE}apps/${a.name}/REPORT.md` });
   for (const p of a.parts) {
+    if (!p.files) p.files = p.source ? [p.source] : []; // recipes written by the first version carry a single source
+    if (!p.kind) { p.kind = 'family'; p.title = p.name; p.functions = 1; }
     const id = p.kind === 'block' ? `block:${p.symbol}` : `family:${p.family}`;
     if (!seen.has(id)) { seen.add(id); nodes.push({ id, label: p.kind === 'block' ? `${p.symbol} · ${p.title}` : `#${p.family} ${p.title}`, type: p.kind, rag: 'green', reason: `${p.functions} function(s)`, gh: p.files[0] ? `https://github.com/${p.files[0].repo}/blob/${p.files[0].commit}/${p.files[0].path}` : null, ext: p.kind === 'block' ? `${STARS}table.html?block=${p.symbol}` : `${STARS}code.html?family=${p.family}` }); }
     edges.push({ from: `app:${a.name}`, to: id, type: 'made-of' });
