@@ -1,0 +1,12 @@
+# Graphs this repository publishes for the Spider dashboard. Written by generate.mjs.
+schema_version: spider-features-v1
+site: "https://ventusltd.github.io/code-generator/"
+graphs:
+  - id: "generated-apps"
+    title: "Generated apps"
+    path: "https://ventusltd.github.io/code-generator/spider/graphs/apps.json"
+    edges_path: null
+    source_spider: "code-generator (generate.mjs)"
+    description: "Apps assembled from numbered parts of the modular star, wired to the parts they are made of and the repositories that already use those parts. Amber apps still need values from their surroundings; the report lists them."
+    nodes: 9
+    edges: 12

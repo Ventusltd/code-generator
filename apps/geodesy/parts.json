@@ -1,0 +1,96 @@
+{
+  "schema": "code-generator.recipe.v1",
+  "name": "geodesy",
+  "title": "Geodesy helpers",
+  "generated_utc": "2026-09-14T08:57:44.649Z",
+  "families": [
+    511,
+    8770
+  ],
+  "needs": [
+    "DEG",
+    "EARTH_RADIUS_KM"
+  ],
+  "decisions": [
+    "EARTH_RADIUS_KM: which earth radius is true is an open decision (EARTH_KM evidence pack); do not pick one silently"
+  ],
+  "parts": [
+    {
+      "family": 511,
+      "name": "distanceKm",
+      "kind": "function",
+      "lang": "js",
+      "standalone": false,
+      "needs": [
+        "DEG",
+        "EARTH_RADIUS_KM"
+      ],
+      "first_written": "2026-09-01T19:22:44+01:00",
+      "library": null,
+      "lines": [
+        14137,
+        14138,
+        14139,
+        14140,
+        14141,
+        14142,
+        1640
+      ],
+      "source": {
+        "repo": "Ventusltd/claude",
+        "commit": "df9da02425fdf0c65d11a84f32cd9b3ef927b309",
+        "path": "sessions/202609031559-skin-architecture/prototype/engine.js",
+        "first": 35,
+        "last": 41,
+        "link": "https://github.com/Ventusltd/claude/blob/df9da02425fdf0c65d11a84f32cd9b3ef927b309/sessions/202609031559-skin-architecture/prototype/engine.js#L35-L41",
+        "live": null
+      },
+      "used_in": 40,
+      "repos": [
+        "Ventusltd/claude",
+        "Ventusltd/globalgrid2050",
+        "Ventusltd/gridatlas",
+        "Ventusltd/testcode",
+        "Ventusltd/ventus-grid-engine"
+      ]
+    },
+    {
+      "family": 8770,
+      "name": "initialBearingDeg",
+      "kind": "function",
+      "lang": "js",
+      "standalone": false,
+      "needs": [
+        "DEG"
+      ],
+      "first_written": "2026-08-31T16:37:30+01:00",
+      "library": null,
+      "lines": [
+        78722,
+        79620,
+        79621,
+        38032,
+        38033,
+        79622,
+        1640
+      ],
+      "source": {
+        "repo": "Ventusltd/globalgrid2050",
+        "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
+        "path": "testcode/202609051152/atlas/cartridges/202609051152-substation-intelligence.js",
+        "first": 1627,
+        "last": 1633,
+        "link": "https://github.com/Ventusltd/globalgrid2050/blob/a387cac3aa3f09b8cdd27d3ed8040d661303f127/testcode/202609051152/atlas/cartridges/202609051152-substation-intelligence.js#L1627-L1633",
+        "live": "https://globalgrid2050.com/testcode/202609051152/atlas/cartridges/202609051152-substation-intelligence.js"
+      },
+      "used_in": 40,
+      "repos": [
+        "Ventusltd/globalgrid2050",
+        "Ventusltd/gridatlas",
+        "Ventusltd/testcode",
+        "Ventusltd/grid-distance-maths",
+        "Ventusltd/ventus-grid-engine"
+      ]
+    }
+  ]
+}
