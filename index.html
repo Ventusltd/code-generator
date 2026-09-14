@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Code generator</title>
+<style>
+  :root{color-scheme:dark}
+  body{margin:0;padding:16px 18px 40px;background:#0b0d12;color:#d8dee9;font:14px/1.5 ui-monospace,Menlo,Consolas,monospace}
+  a{color:#00e5ff}
+  h1{font-size:22px;margin:0 0 4px}
+  .ey{color:#7da0c8;text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+  input{width:100%;box-sizing:border-box;padding:10px;background:#12151c;border:1px solid #2a3140;color:inherit;font:inherit;border-radius:6px;margin:8px 0}
+  .row{display:flex;gap:12px;flex-wrap:wrap}.row>*{flex:1 1 280px;min-width:0}
+  .card{border:1px solid #2a3140;border-radius:8px;padding:14px;margin:12px 0;background:#0f1218}
+  .hits button,.basket button{display:block;width:100%;text-align:left;background:none;border:0;border-bottom:1px solid #1a1f2a;color:#d8dee9;padding:6px 4px;font:inherit;cursor:pointer}
+  .hits button:hover{color:#00e5ff}
+  .green{color:#39d353}.amber{color:#ffd54a}.muted{color:#8b93a7}
+  pre{background:#070910;border:1px solid #1a1f2a;border-radius:6px;padding:10px;overflow:auto;font-size:12.5px;max-height:50vh}
+  .act{background:#12151c;border:1px solid #385464;color:#d8dee9;padding:8px 12px;border-radius:6px;font:inherit;cursor:pointer;margin:4px 6px 4px 0}
+  .act:hover{border-color:#00e5ff}
+  code{background:#12151c;padding:1px 4px;border-radius:3px}
+</style>
+<div class="ey">Ventus · Global Grid 2050 · Code generator</div>
+<h1>Build an app from numbered parts</h1>
+<div class="muted" id="status">Loading the modular star's index…</div>
+<div class="row">
+  <div class="card">
+    <div class="ey">1 · select functions</div>
+    <input id="q" placeholder="Function name or family number" autocomplete="off">
+    <div class="hits" id="hits"></div>
+  </div>
+  <div class="card">
+    <div class="ey">2 · the app</div>
+    <input id="name" placeholder="app name, e.g. geodesy" value="my-app">
+    <div class="basket" id="basket"><span class="muted">Nothing selected yet.</span></div>
+    <div id="needs"></div>
+    <button class="act" id="build" disabled>Assemble</button>
+  </div>
+</div>
+<div class="card" id="out" hidden>
+  <div class="ey">3 · apply to a new app</div>
+  <p>Copy or download the module below, or make it durable in this repository with its report and recipe:</p>
+  <pre id="cmd"></pre>
+  <button class="act" id="copyCode">Copy module</button><button class="act" id="download">Download module</button><button class="act" id="copyCmd">Copy workflow command</button>
+  <pre id="module"></pre>
+</div>
+<p class="muted">Parts are copied exactly from GitHub at the commit the <a href="https://github.com/Ventusltd/stars/blob/main/MODULAR-STAR.md">modular star</a> recorded. What a part still needs from its surroundings is listed, never guessed. Generated apps: <a href="./apps/">apps/</a> · Spider graph: <a href="./spider/graphs/apps.json">apps.json</a></p>
+<script>
+const STARS = 'https://ventusltd.github.io/stars/';
+const $ = s => document.querySelector(s);
+const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let index, names; const buckets = new Map(), basket = new Map();
+async function family(n) { const b = Math.floor(n / index.bucket_size); if (!buckets.has(b)) buckets.set(b, fetch(`${STARS}code/f/${b}.json`).then(r => r.ok ? r.json() : {})); return (await buckets.get(b))[n] || null; }
+function search(q) {
+  q = q.trim(); const h = $('#hits'); h.innerHTML = ''; if (!q) return;
+  const ql = q.toLowerCase();
+  const found = /^#?\d+$/.test(q) ? [[q.replace('#', ''), [Number(q.replace('#', ''))]]] : Object.keys(names).filter(k => k.toLowerCase().includes(ql)).sort((a, b) => (a.toLowerCase().startsWith(ql) ? 0 : 1) - (b.toLowerCase().startsWith(ql) ? 0 : 1) || a.length - b.length).slice(0, 25).map(k => [k, names[k].slice(0, 6)]);
+  for (const [k, ns] of found) for (const n of ns) { const b = document.createElement('button'); b.textContent = `+ #${n} ${k}`; b.onclick = () => add(n); h.append(b); }
+  if (!found.length) h.innerHTML = '<span class="amber">No existing code with that name: this needs to be written new.</span>';
+}
+async function add(n) { if (basket.has(n)) return; const f = await family(n); if (!f) return; basket.set(n, f); render(); }
+function render() {
+  const b = $('#basket'); b.innerHTML = '';
+  for (const [n, f] of basket) { const x = document.createElement('button'); x.innerHTML = `<span class="${f.standalone ? 'green' : 'amber'}">●</span> #${n} ${esc(f.names[0])} <span class="muted">· ${f.places.length} place(s)${f.needs && f.needs.length ? ' · needs ' + esc(f.needs.join(', ')) : ''} · remove</span>`; x.onclick = () => { basket.delete(n); render(); }; b.append(x); }
+  if (!basket.size) b.innerHTML = '<span class="muted">Nothing selected yet.</span>';
+  const defined = new Set([...basket.values()].map(f => f.names[0]));
+  const needs = [...new Set([...basket.values()].flatMap(f => f.needs || []))].filter(x => !defined.has(x)).sort();
+  $('#needs').innerHTML = needs.length ? `<p><span class="amber">Still needed from the surroundings:</span> ${needs.map(esc).join(', ')}${needs.some(x => /EARTH|RADIUS/i.test(x)) ? ' <span class="muted">(the earth radius is an open decision)</span>' : ''}</p>` : (basket.size ? '<p class="green">Complete: every part is self-contained.</p>' : '');
+  $('#build').disabled = !basket.size;
+}
+async function assemble() {
+  const name = $('#name').value.trim() || 'my-app';
+  const parts = [];
+  for (const [n, f] of basket) {
+    const p = f.places[0]; const url = `https://raw.githubusercontent.com/${p.repo}/${p.commit}/${p.path.split('/').map(encodeURIComponent).join('/')}`;
+    const r = await fetch(url); const lines = (await r.text()).split('\n').slice(p.first - 1, p.last);
+    parts.push({ n, f, p, text: lines.join('\n'), link: `https://github.com/${p.repo}/blob/${p.commit}/${p.path}#L${p.first}-L${p.last}` });
+  }
+  const defined = new Set(parts.map(x => x.f.names[0]));
+  const needs = [...new Set(parts.flatMap(x => x.f.needs || []))].filter(x => !defined.has(x)).sort();
+  let out = `// ${name} — assembled ${new Date().toISOString()} from the modular star. Family numbers are permanent keys.\n`;
+  if (needs.length) out += `// Still needed from the surroundings: ${needs.join(', ')}\n` + needs.map(x => `const ${x} = undefined; // TODO decide`).join('\n') + '\n';
+  for (const x of parts) out += `\n// ── family #${x.n} ${x.f.names[0]} · used in ${x.f.places.length} place(s) · ${x.link}\n` + (/^\s*(async\s+)?(function|class)\b/.test(x.text) ? 'export ' : '') + x.text.replace(/\s+$/, '') + '\n';
+  $('#module').textContent = out; $('#out').hidden = false;
+  const cmd = `gh workflow run generate.yml -R Ventusltd/code-generator -f name=${name} -f families=${[...basket.keys()].join(',')}`;
+  $('#cmd').textContent = cmd;
+  $('#copyCode').onclick = () => navigator.clipboard.writeText(out).then(() => $('#copyCode').textContent = 'Copied');
+  $('#copyCmd').onclick = () => navigator.clipboard.writeText(cmd).then(() => $('#copyCmd').textContent = 'Copied');
+  $('#download').onclick = () => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([out], {type: 'text/javascript'})); a.download = `${name}.mjs`; a.click(); };
+}
+(async () => {
+  try {
+    [index, names] = await Promise.all([fetch(STARS + 'code/index.json').then(r => r.json()), fetch(STARS + 'code/names.json').then(r => r.json())]);
+    $('#status').textContent = `${index.families.toLocaleString('en-GB')} families · ${index.elements.toLocaleString('en-GB')} functions and classes · index updated ${index.generated_utc.slice(0, 16).replace('T', ' ')} UTC`;
+    $('#q').oninput = e => search(e.target.value); $('#build').onclick = assemble;
+    const pre = new URLSearchParams(location.search).get('families'); if (pre) for (const n of pre.split(',')) await add(Number(n));
+  } catch (e) { $('#status').textContent = 'The modular star index is not reachable: ' + e.message; }
+})();
+</script>
+</html>

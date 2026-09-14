@@ -1,0 +1,60 @@
+name: Generate app
+
+# Assemble a new app from numbered parts of the modular star, prove it parses and imports, and commit it
+# with its report and recipe. Run from the Actions tab (or: gh workflow run generate.yml -f name=geodesy -f families=511,8770).
+on:
+  workflow_dispatch:
+    inputs:
+      name:
+        description: App name (lowercase letters, digits, hyphens)
+        required: true
+      families:
+        description: Family numbers, comma-separated (from https://ventusltd.github.io/stars/code.html)
+        required: true
+      title:
+        description: Title for the report (optional)
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate
+  cancel-in-progress: false
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 24
+
+      - name: Generate
+        run: node generate.mjs --name "${{ inputs.name }}" --families "${{ inputs.families }}" --title "${{ inputs.title || inputs.name }}"
+
+      - name: Prove the module parses and imports
+        run: |
+          set -e
+          for f in apps/${{ inputs.name }}/*.mjs; do [ -f "$f" ] && node --check "$f"; done
+          if [ -f "apps/${{ inputs.name }}/${{ inputs.name }}.mjs" ]; then
+            node -e "import('./apps/${{ inputs.name }}/${{ inputs.name }}.mjs').then(m => console.log(Object.keys(m).length + ' export(s) load'))"
+          fi
+          if [ -f "apps/${{ inputs.name }}/${{ inputs.name }}.py" ]; then python3 -c "import ast,sys; ast.parse(open('apps/${{ inputs.name }}/${{ inputs.name }}.py').read()); print('Python parses')"; fi
+
+      - name: Commit
+        run: |
+          git add apps spider
+          if git diff --cached --quiet; then echo "No change."; exit 0; fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -qm "Generate ${{ inputs.name }} from families ${{ inputs.families }}"
+          for i in 1 2 3; do git pull --rebase -q -X theirs && git push -q && exit 0; git rebase --abort 2>/dev/null || true; sleep 7; done
+          exit 1
+
+      - name: Summary
+        if: always()
+        run: |
+          [ -f "apps/${{ inputs.name }}/REPORT.md" ] && cat "apps/${{ inputs.name }}/REPORT.md" >> "$GITHUB_STEP_SUMMARY" || echo "No report produced." >> "$GITHUB_STEP_SUMMARY"
