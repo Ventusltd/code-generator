@@ -2,7 +2,7 @@
   "schema": "code-generator.recipe.v2",
   "name": "substation-finder",
   "title": "Substation finder on a map",
-  "generated_utc": "2026-09-14T09:34:58.204Z",
+  "generated_utc": "2026-09-14T09:43:20.296Z",
   "blocks": [
     "Si",
     "Vn",
@@ -13,22 +13,6 @@
   "families": [],
   "needs": [
     {
-      "name": "ACCEPTS",
-      "meaning": "ACCEPTS"
-    },
-    {
-      "name": "BAR_ID",
-      "meaning": "BAR_ID"
-    },
-    {
-      "name": "BASE_MVA",
-      "meaning": "BASE_MVA"
-    },
-    {
-      "name": "BASIS",
-      "meaning": "BASIS"
-    },
-    {
       "name": "BLOCK_CLASS",
       "meaning": "BLOCK_CLASS"
     },
@@ -37,84 +21,12 @@
       "meaning": "Blob"
     },
     {
-      "name": "CABLE_FACTOR",
-      "meaning": "CABLE_FACTOR"
-    },
-    {
-      "name": "CLICK_DEBOUNCE_MS",
-      "meaning": "CLICK_DEBOUNCE_MS"
-    },
-    {
-      "name": "CODE",
-      "meaning": "CODE"
-    },
-    {
       "name": "CompressionStream",
       "meaning": "CompressionStream"
     },
     {
-      "name": "DATA_HEAD_CHARS",
-      "meaning": "DATA_HEAD_CHARS"
-    },
-    {
-      "name": "DECLARED_MODEL",
-      "meaning": "DECLARED_MODEL"
-    },
-    {
       "name": "DEG",
       "meaning": "degrees-to-radians constant (Ek's neighbour)"
-    },
-    {
-      "name": "EARTH_RADIUS_KM",
-      "meaning": "the earth radius: an open decision (element Ek)"
-    },
-    {
-      "name": "EDGE_DOT_CLEARANCE_PX",
-      "meaning": "EDGE_DOT_CLEARANCE_PX"
-    },
-    {
-      "name": "ENGINE_GRAPH_URL",
-      "meaning": "ENGINE_GRAPH_URL"
-    },
-    {
-      "name": "ENGINE_VIEW_URL",
-      "meaning": "ENGINE_VIEW_URL"
-    },
-    {
-      "name": "ESTATE_LINKS",
-      "meaning": "ESTATE_LINKS"
-    },
-    {
-      "name": "EXPECTED_ENGINE_LAYERS",
-      "meaning": "EXPECTED_ENGINE_LAYERS"
-    },
-    {
-      "name": "EXPECTED_LAYER_CONTROLS",
-      "meaning": "EXPECTED_LAYER_CONTROLS"
-    },
-    {
-      "name": "EXPECTED_PIPELINE_LAYERS",
-      "meaning": "EXPECTED_PIPELINE_LAYERS"
-    },
-    {
-      "name": "FAILURE_ID",
-      "meaning": "FAILURE_ID"
-    },
-    {
-      "name": "FALLBACK",
-      "meaning": "FALLBACK"
-    },
-    {
-      "name": "FALLBACK_LABEL",
-      "meaning": "FALLBACK_LABEL"
-    },
-    {
-      "name": "FETCH_TIMEOUT_MS",
-      "meaning": "FETCH_TIMEOUT_MS"
-    },
-    {
-      "name": "FRAME_TIMEOUT_MS",
-      "meaning": "FRAME_TIMEOUT_MS"
     },
     {
       "name": "File",
@@ -125,26 +37,6 @@
       "meaning": "GB_ID"
     },
     {
-      "name": "GRID_CONFIG",
-      "meaning": "GRID_CONFIG"
-    },
-    {
-      "name": "HIT_RADIUS_EDGE_PX",
-      "meaning": "HIT_RADIUS_EDGE_PX"
-    },
-    {
-      "name": "HIT_RADIUS_VERTEX_PX",
-      "meaning": "HIT_RADIUS_VERTEX_PX"
-    },
-    {
-      "name": "HOVER_THROTTLE_MS",
-      "meaning": "HOVER_THROTTLE_MS"
-    },
-    {
-      "name": "IMPEDANCE_BASIS",
-      "meaning": "IMPEDANCE_BASIS"
-    },
-    {
       "name": "ImageCapture",
       "meaning": "ImageCapture"
     },
@@ -153,136 +45,12 @@
       "meaning": "LEDGER_ID"
     },
     {
-      "name": "MAX_RADIUS_KM",
-      "meaning": "MAX_RADIUS_KM"
-    },
-    {
-      "name": "MAX_RESOURCES",
-      "meaning": "MAX_RESOURCES"
-    },
-    {
-      "name": "MAX_TOTAL_BYTES",
-      "meaning": "MAX_TOTAL_BYTES"
-    },
-    {
-      "name": "MAX_TRIES",
-      "meaning": "MAX_TRIES"
-    },
-    {
-      "name": "MENUS",
-      "meaning": "MENUS"
-    },
-    {
-      "name": "MINIMUM_KM",
-      "meaning": "MINIMUM_KM"
-    },
-    {
       "name": "MutationObserver",
       "meaning": "MutationObserver"
     },
     {
-      "name": "NEVER_INFERRED",
-      "meaning": "NEVER_INFERRED"
-    },
-    {
-      "name": "NL",
-      "meaning": "NL"
-    },
-    {
-      "name": "NOISE",
-      "meaning": "NOISE"
-    },
-    {
-      "name": "NOT_AN_ASSESSMENT",
-      "meaning": "NOT_AN_ASSESSMENT"
-    },
-    {
-      "name": "NOT_A_CONNECTION_OFFER",
-      "meaning": "NOT_A_CONNECTION_OFFER"
-    },
-    {
-      "name": "NOT_A_COUNTERPARTY",
-      "meaning": "NOT_A_COUNTERPARTY"
-    },
-    {
-      "name": "NOT_A_LOADING",
-      "meaning": "NOT_A_LOADING"
-    },
-    {
-      "name": "NS",
-      "meaning": "NS"
-    },
-    {
-      "name": "PANEL_ANCHOR",
-      "meaning": "PANEL_ANCHOR"
-    },
-    {
       "name": "PANEL_ID",
       "meaning": "PANEL_ID"
-    },
-    {
-      "name": "PINS",
-      "meaning": "PINS"
-    },
-    {
-      "name": "POPUP_MAX_WIDTH",
-      "meaning": "POPUP_MAX_WIDTH"
-    },
-    {
-      "name": "PRODUCT",
-      "meaning": "PRODUCT"
-    },
-    {
-      "name": "PRODUCT_ID",
-      "meaning": "PRODUCT_ID"
-    },
-    {
-      "name": "QUOTED_METRIC",
-      "meaning": "QUOTED_METRIC"
-    },
-    {
-      "name": "QUOTED_METRIC_LABEL",
-      "meaning": "QUOTED_METRIC_LABEL"
-    },
-    {
-      "name": "RAD",
-      "meaning": "RAD"
-    },
-    {
-      "name": "RADIUS_MAX",
-      "meaning": "RADIUS_MAX"
-    },
-    {
-      "name": "RADIUS_MIN",
-      "meaning": "RADIUS_MIN"
-    },
-    {
-      "name": "RAW",
-      "meaning": "RAW"
-    },
-    {
-      "name": "REPD_IDS",
-      "meaning": "REPD_IDS"
-    },
-    {
-      "name": "REQUIRED_SCHEMA",
-      "meaning": "REQUIRED_SCHEMA"
-    },
-    {
-      "name": "REQUIRES",
-      "meaning": "REQUIRES"
-    },
-    {
-      "name": "ROUTING",
-      "meaning": "ROUTING"
-    },
-    {
-      "name": "RUNTIME_STATE",
-      "meaning": "RUNTIME_STATE"
-    },
-    {
-      "name": "RUN_COMMAND",
-      "meaning": "RUN_COMMAND"
     },
     {
       "name": "ResizeObserver",
@@ -293,256 +61,24 @@
       "meaning": "Response"
     },
     {
-      "name": "SCHEMA",
-      "meaning": "SCHEMA"
-    },
-    {
-      "name": "SEARCH_THRESHOLD",
-      "meaning": "SEARCH_THRESHOLD"
-    },
-    {
-      "name": "SINK_RULE",
-      "meaning": "SINK_RULE"
-    },
-    {
-      "name": "STATUS_COLOURS",
-      "meaning": "STATUS_COLOURS"
-    },
-    {
-      "name": "STATUS_ID",
-      "meaning": "STATUS_ID"
-    },
-    {
-      "name": "STUDY_LINKS",
-      "meaning": "STUDY_LINKS"
-    },
-    {
-      "name": "STYLE_ID",
-      "meaning": "STYLE_ID"
-    },
-    {
-      "name": "TECH_COLOURS",
-      "meaning": "TECH_COLOURS"
-    },
-    {
-      "name": "TECH_TERMS",
-      "meaning": "TECH_TERMS"
-    },
-    {
-      "name": "TEXTUAL",
-      "meaning": "TEXTUAL"
-    },
-    {
-      "name": "TOLERANCE_DEG_SQ",
-      "meaning": "TOLERANCE_DEG_SQ"
-    },
-    {
-      "name": "TRANSIT_IDS",
-      "meaning": "TRANSIT_IDS"
-    },
-    {
-      "name": "TRANSIT_SOURCE_MAP",
-      "meaning": "TRANSIT_SOURCE_MAP"
-    },
-    {
-      "name": "TRANSIT_URLS",
-      "meaning": "TRANSIT_URLS"
-    },
-    {
       "name": "TRAY_ID",
       "meaning": "TRAY_ID"
-    },
-    {
-      "name": "UNDECLARED",
-      "meaning": "UNDECLARED"
-    },
-    {
-      "name": "UNKNOWN",
-      "meaning": "UNKNOWN"
-    },
-    {
-      "name": "ZONE_DRAW_DEFAULT_KM",
-      "meaning": "ZONE_DRAW_DEFAULT_KM"
-    },
-    {
-      "name": "ZONE_DRAW_MAX_KM",
-      "meaning": "ZONE_DRAW_MAX_KM"
-    },
-    {
-      "name": "ZONE_DRAW_VERTICES",
-      "meaning": "ZONE_DRAW_VERTICES"
-    },
-    {
-      "name": "_lastHoverMs",
-      "meaning": "_lastHoverMs"
-    },
-    {
-      "name": "_lastMouseMoveRaf",
-      "meaning": "_lastMouseMoveRaf"
-    },
-    {
-      "name": "_pendingToolClick",
-      "meaning": "_pendingToolClick"
-    },
-    {
-      "name": "_visibleHoverIds",
-      "meaning": "_visibleHoverIds"
-    },
-    {
-      "name": "_visibleInteractiveIds",
-      "meaning": "_visibleInteractiveIds"
-    },
-    {
-      "name": "_zoneDrawCollapsed",
-      "meaning": "_zoneDrawCollapsed"
-    },
-    {
-      "name": "_zoneDrawPopupRaf",
-      "meaning": "_zoneDrawPopupRaf"
-    },
-    {
-      "name": "activePopup",
-      "meaning": "activePopup"
-    },
-    {
-      "name": "ad",
-      "meaning": "ad"
-    },
-    {
-      "name": "added",
-      "meaning": "added"
     },
     {
       "name": "alert",
       "meaning": "alert"
     },
     {
-      "name": "allLayerIds",
-      "meaning": "allLayerIds"
-    },
-    {
-      "name": "allREPDFeatures",
-      "meaning": "allREPDFeatures"
-    },
-    {
-      "name": "area",
-      "meaning": "area"
-    },
-    {
-      "name": "arrivalLayers",
-      "meaning": "arrivalLayers"
-    },
-    {
-      "name": "asNumber",
-      "meaning": "asNumber"
-    },
-    {
-      "name": "asString",
-      "meaning": "asString"
-    },
-    {
       "name": "atob",
       "meaning": "atob"
-    },
-    {
-      "name": "available",
-      "meaning": "available"
-    },
-    {
-      "name": "b",
-      "meaning": "b"
-    },
-    {
-      "name": "bandKey",
-      "meaning": "bandKey"
-    },
-    {
-      "name": "bands",
-      "meaning": "bands"
-    },
-    {
-      "name": "bar",
-      "meaning": "bar"
-    },
-    {
-      "name": "base",
-      "meaning": "base"
-    },
-    {
-      "name": "best",
-      "meaning": "best"
-    },
-    {
-      "name": "box",
-      "meaning": "box"
-    },
-    {
-      "name": "brandSlot",
-      "meaning": "brandSlot"
-    },
-    {
-      "name": "byKind",
-      "meaning": "byKind"
-    },
-    {
-      "name": "byName",
-      "meaning": "byName"
-    },
-    {
-      "name": "byNode",
-      "meaning": "byNode"
-    },
-    {
-      "name": "bytes",
-      "meaning": "bytes"
-    },
-    {
-      "name": "c",
-      "meaning": "c"
-    },
-    {
-      "name": "canonical",
-      "meaning": "canonical"
-    },
-    {
-      "name": "canvas",
-      "meaning": "canvas"
-    },
-    {
-      "name": "cap",
-      "meaning": "cap"
-    },
-    {
-      "name": "chunks",
-      "meaning": "chunks"
-    },
-    {
-      "name": "clearRadiusCircle",
-      "meaning": "clearRadiusCircle"
-    },
-    {
-      "name": "controls",
-      "meaning": "controls"
     },
     {
       "name": "coord",
       "meaning": "coord"
     },
     {
-      "name": "copy",
-      "meaning": "copy"
-    },
-    {
       "name": "createImageBitmap",
       "meaning": "createImageBitmap"
-    },
-    {
-      "name": "curtainOpen",
-      "meaning": "curtainOpen"
-    },
-    {
-      "name": "distanceKm",
-      "meaning": "distanceKm"
     },
     {
       "name": "doc",
@@ -553,24 +89,8 @@
       "meaning": "a web page"
     },
     {
-      "name": "draftKey",
-      "meaning": "draftKey"
-    },
-    {
-      "name": "drawRadiusCircle",
-      "meaning": "drawRadiusCircle"
-    },
-    {
       "name": "e",
       "meaning": "e"
-    },
-    {
-      "name": "engineFetchStarted",
-      "meaning": "engineFetchStarted"
-    },
-    {
-      "name": "features",
-      "meaning": "features"
     },
     {
       "name": "fetch",
@@ -581,604 +101,76 @@
       "meaning": "fileBlocks"
     },
     {
-      "name": "finish",
-      "meaning": "finish"
-    },
-    {
-      "name": "floor",
-      "meaning": "floor"
-    },
-    {
-      "name": "forwardingLayerChoice",
-      "meaning": "forwardingLayerChoice"
-    },
-    {
-      "name": "fragment",
-      "meaning": "fragment"
-    },
-    {
-      "name": "fsActive",
-      "meaning": "fsActive"
-    },
-    {
-      "name": "fsFragment",
-      "meaning": "fsFragment"
-    },
-    {
-      "name": "fsGroupDiv",
-      "meaning": "fsGroupDiv"
-    },
-    {
-      "name": "furniture",
-      "meaning": "furniture"
-    },
-    {
-      "name": "getLayerConfig",
-      "meaning": "getLayerConfig"
-    },
-    {
-      "name": "globalSubsData",
-      "meaning": "globalSubsData"
-    },
-    {
-      "name": "graph",
-      "meaning": "graph"
-    },
-    {
-      "name": "gridBody",
-      "meaning": "gridBody"
-    },
-    {
-      "name": "gridHead",
-      "meaning": "gridHead"
-    },
-    {
-      "name": "groupDiv",
-      "meaning": "groupDiv"
-    },
-    {
       "name": "headerLines",
       "meaning": "headerLines"
-    },
-    {
-      "name": "i",
-      "meaning": "i"
-    },
-    {
-      "name": "id",
-      "meaning": "id"
-    },
-    {
-      "name": "key",
-      "meaning": "key"
-    },
-    {
-      "name": "kindLabels",
-      "meaning": "kindLabels"
-    },
-    {
-      "name": "lastGroup",
-      "meaning": "lastGroup"
     },
     {
       "name": "lat",
       "meaning": "lat"
     },
     {
-      "name": "lat1",
-      "meaning": "lat1"
-    },
-    {
-      "name": "latCos",
-      "meaning": "latCos"
-    },
-    {
-      "name": "layerConfig",
-      "meaning": "layerConfig"
-    },
-    {
-      "name": "layerConfigById",
-      "meaning": "layerConfigById"
-    },
-    {
-      "name": "layerId",
-      "meaning": "layerId"
-    },
-    {
-      "name": "layerProxies",
-      "meaning": "layerProxies"
-    },
-    {
-      "name": "layerTargets",
-      "meaning": "layerTargets"
-    },
-    {
-      "name": "layersControl",
-      "meaning": "layersControl"
-    },
-    {
       "name": "layersMarker",
       "meaning": "layersMarker"
-    },
-    {
-      "name": "left",
-      "meaning": "left"
-    },
-    {
-      "name": "limit",
-      "meaning": "limit"
-    },
-    {
-      "name": "lines",
-      "meaning": "lines"
-    },
-    {
-      "name": "link",
-      "meaning": "link"
     },
     {
       "name": "localStorage",
       "meaning": "localStorage"
     },
     {
-      "name": "located",
-      "meaning": "located"
-    },
-    {
       "name": "location",
       "meaning": "location"
-    },
-    {
-      "name": "lon",
-      "meaning": "lon"
-    },
-    {
-      "name": "mFeatures",
-      "meaning": "mFeatures"
-    },
-    {
-      "name": "makeUnionFind",
-      "meaning": "makeUnionFind"
-    },
-    {
-      "name": "map",
-      "meaning": "map"
-    },
-    {
-      "name": "mapLayer",
-      "meaning": "mapLayer"
     },
     {
       "name": "maplibregl",
       "meaning": "the MapLibre map library"
     },
     {
-      "name": "matches",
-      "meaning": "matches"
-    },
-    {
-      "name": "measureClosed",
-      "meaning": "measureClosed"
-    },
-    {
-      "name": "measureMode",
-      "meaning": "measureMode"
-    },
-    {
-      "name": "measurePoints",
-      "meaning": "measurePoints"
-    },
-    {
-      "name": "measurementDock",
-      "meaning": "measurementDock"
-    },
-    {
-      "name": "menu",
-      "meaning": "menu"
-    },
-    {
       "name": "min",
       "meaning": "min"
-    },
-    {
-      "name": "mounting",
-      "meaning": "mounting"
-    },
-    {
-      "name": "moved",
-      "meaning": "moved"
-    },
-    {
-      "name": "n",
-      "meaning": "n"
-    },
-    {
-      "name": "nav",
-      "meaning": "nav"
     },
     {
       "name": "navigator",
       "meaning": "navigator"
     },
     {
-      "name": "networkQueue",
-      "meaning": "networkQueue"
-    },
-    {
-      "name": "node",
-      "meaning": "node"
-    },
-    {
-      "name": "nodes",
-      "meaning": "nodes"
-    },
-    {
       "name": "obj",
       "meaning": "obj"
-    },
-    {
-      "name": "observer",
-      "meaning": "observer"
-    },
-    {
-      "name": "offsets",
-      "meaning": "offsets"
-    },
-    {
-      "name": "openPanelRefs",
-      "meaning": "openPanelRefs"
-    },
-    {
-      "name": "original",
-      "meaning": "original"
-    },
-    {
-      "name": "ownerOfNode",
-      "meaning": "ownerOfNode"
-    },
-    {
-      "name": "p",
-      "meaning": "p"
-    },
-    {
-      "name": "panel",
-      "meaning": "panel"
-    },
-    {
-      "name": "panels",
-      "meaning": "panels"
-    },
-    {
-      "name": "parametersOf",
-      "meaning": "parametersOf"
     },
     {
       "name": "performance",
       "meaning": "performance"
     },
     {
-      "name": "points",
-      "meaning": "points"
-    },
-    {
-      "name": "poll",
-      "meaning": "poll"
-    },
-    {
       "name": "position",
       "meaning": "position"
-    },
-    {
-      "name": "prepared",
-      "meaning": "prepared"
-    },
-    {
-      "name": "preparing",
-      "meaning": "preparing"
-    },
-    {
-      "name": "product",
-      "meaning": "product"
-    },
-    {
-      "name": "proxy",
-      "meaning": "proxy"
-    },
-    {
-      "name": "published",
-      "meaning": "published"
-    },
-    {
-      "name": "rAreaInput",
-      "meaning": "rAreaInput"
-    },
-    {
-      "name": "radiusAreaCenter",
-      "meaning": "radiusAreaCenter"
-    },
-    {
-      "name": "radiusAreaMarker",
-      "meaning": "radiusAreaMarker"
-    },
-    {
-      "name": "radiusAreaMode",
-      "meaning": "radiusAreaMode"
-    },
-    {
-      "name": "radiusCenter",
-      "meaning": "radiusCenter"
-    },
-    {
-      "name": "radiusInput",
-      "meaning": "radiusInput"
-    },
-    {
-      "name": "radiusMarker",
-      "meaning": "radiusMarker"
-    },
-    {
-      "name": "radiusMode",
-      "meaning": "radiusMode"
-    },
-    {
-      "name": "ratingsOf",
-      "meaning": "ratingsOf"
-    },
-    {
-      "name": "ref",
-      "meaning": "ref"
     },
     {
       "name": "requestAnimationFrame",
       "meaning": "requestAnimationFrame"
     },
     {
-      "name": "resolve",
-      "meaning": "resolve"
-    },
-    {
-      "name": "resultsEl",
-      "meaning": "resultsEl"
-    },
-    {
-      "name": "retire",
-      "meaning": "retire"
-    },
-    {
-      "name": "right",
-      "meaning": "right"
-    },
-    {
-      "name": "row",
-      "meaning": "row"
-    },
-    {
-      "name": "run",
-      "meaning": "run"
-    },
-    {
-      "name": "searchIndex",
-      "meaning": "searchIndex"
-    },
-    {
-      "name": "seen",
-      "meaning": "seen"
-    },
-    {
-      "name": "shot",
-      "meaning": "shot"
-    },
-    {
-      "name": "siteOf",
-      "meaning": "siteOf"
-    },
-    {
-      "name": "sitesByCode",
-      "meaning": "sitesByCode"
-    },
-    {
-      "name": "solve",
-      "meaning": "solve"
-    },
-    {
-      "name": "sourceId",
-      "meaning": "sourceId"
-    },
-    {
       "name": "splitIntoVolumes",
       "meaning": "splitIntoVolumes"
-    },
-    {
-      "name": "state",
-      "meaning": "state"
-    },
-    {
-      "name": "states",
-      "meaning": "states"
-    },
-    {
-      "name": "stats",
-      "meaning": "stats"
-    },
-    {
-      "name": "statusMode",
-      "meaning": "statusMode"
     },
     {
       "name": "subs",
       "meaning": "subs"
     },
     {
-      "name": "text",
-      "meaning": "text"
-    },
-    {
       "name": "then",
       "meaning": "then"
-    },
-    {
-      "name": "timer",
-      "meaning": "timer"
-    },
-    {
-      "name": "title",
-      "meaning": "title"
-    },
-    {
-      "name": "titles",
-      "meaning": "titles"
-    },
-    {
-      "name": "total",
-      "meaning": "total"
-    },
-    {
-      "name": "tries",
-      "meaning": "tries"
-    },
-    {
-      "name": "typed",
-      "meaning": "typed"
-    },
-    {
-      "name": "units",
-      "meaning": "units"
-    },
-    {
-      "name": "urlCache",
-      "meaning": "urlCache"
-    },
-    {
-      "name": "video",
-      "meaning": "video"
-    },
-    {
-      "name": "voltageOf",
-      "meaning": "voltageOf"
-    },
-    {
-      "name": "was",
-      "meaning": "was"
     },
     {
       "name": "window",
       "meaning": "a web page"
     },
     {
-      "name": "wrap",
-      "meaning": "wrap"
-    },
-    {
-      "name": "zdRadiusInput",
-      "meaning": "zdRadiusInput"
-    },
-    {
-      "name": "zoneDrawDragIdx",
-      "meaning": "zoneDrawDragIdx"
-    },
-    {
-      "name": "zoneDrawDragging",
-      "meaning": "zoneDrawDragging"
-    },
-    {
-      "name": "zoneDrawJustDragged",
-      "meaning": "zoneDrawJustDragged"
-    },
-    {
-      "name": "zoneDrawLocked",
-      "meaning": "zoneDrawLocked"
-    },
-    {
-      "name": "zoneDrawMode",
-      "meaning": "zoneDrawMode"
-    },
-    {
-      "name": "zoneDrawPoints",
-      "meaning": "zoneDrawPoints"
-    },
-    {
-      "name": "zoneFile",
-      "meaning": "zoneFile"
-    },
-    {
-      "name": "zoneHistory",
-      "meaning": "zoneHistory"
-    },
-    {
-      "name": "zoneHistoryApplying",
-      "meaning": "zoneHistoryApplying"
-    },
-    {
-      "name": "zoneLock",
-      "meaning": "zoneLock"
-    },
-    {
-      "name": "normalise",
-      "meaning": "normalise"
-    },
-    {
-      "name": "DUCKDB_MODULE",
-      "meaning": "DUCKDB_MODULE"
-    },
-    {
-      "name": "FALSE_ORIGIN",
-      "meaning": "FALSE_ORIGIN"
-    },
-    {
-      "name": "FULL_POSTCODE",
-      "meaning": "FULL_POSTCODE"
-    },
-    {
-      "name": "GEOCODER_BASE",
-      "meaning": "GEOCODER_BASE"
-    },
-    {
-      "name": "GLOBAL_GEOCODER_URL",
-      "meaning": "GLOBAL_GEOCODER_URL"
-    },
-    {
-      "name": "MANIFEST_SHA256",
-      "meaning": "MANIFEST_SHA256"
-    },
-    {
-      "name": "MANIFEST_URL",
-      "meaning": "MANIFEST_URL"
-    },
-    {
-      "name": "OUTCODE",
-      "meaning": "OUTCODE"
-    },
-    {
-      "name": "PARQUET_SHA256",
-      "meaning": "PARQUET_SHA256"
-    },
-    {
-      "name": "PARQUET_URL",
-      "meaning": "PARQUET_URL"
-    },
-    {
       "name": "Worker",
       "meaning": "Worker"
     },
     {
-      "name": "activeQuerySerial",
-      "meaning": "activeQuerySerial"
-    },
-    {
-      "name": "compactPostcode",
-      "meaning": "compactPostcode"
-    },
-    {
-      "name": "compactRef",
-      "meaning": "compactRef"
-    },
-    {
       "name": "crypto",
       "meaning": "crypto"
-    },
-    {
-      "name": "debounceTimer",
-      "meaning": "debounceTimer"
     },
     {
       "name": "globalResult",
@@ -1189,58 +181,6 @@
       "meaning": "history"
     },
     {
-      "name": "input",
-      "meaning": "input"
-    },
-    {
-      "name": "locationPopup",
-      "meaning": "locationPopup"
-    },
-    {
-      "name": "manifestPromise",
-      "meaning": "manifestPromise"
-    },
-    {
-      "name": "params",
-      "meaning": "params"
-    },
-    {
-      "name": "result",
-      "meaning": "result"
-    },
-    {
-      "name": "rowObject",
-      "meaning": "rowObject"
-    },
-    {
-      "name": "runtimePromise",
-      "meaning": "runtimePromise"
-    },
-    {
-      "name": "searchable",
-      "meaning": "searchable"
-    },
-    {
-      "name": "OriginalMap",
-      "meaning": "OriginalMap"
-    },
-    {
-      "name": "PARQUET",
-      "meaning": "PARQUET"
-    },
-    {
-      "name": "SENDER_REL",
-      "meaning": "SENDER_REL"
-    },
-    {
-      "name": "SPINE_REL",
-      "meaning": "SPINE_REL"
-    },
-    {
-      "name": "WIDER_REL",
-      "meaning": "WIDER_REL"
-    },
-    {
       "name": "XMLHttpRequest",
       "meaning": "XMLHttpRequest"
     },
@@ -1249,68 +189,16 @@
       "meaning": "claimAgain"
     },
     {
-      "name": "consoleErrors",
-      "meaning": "consoleErrors"
-    },
-    {
-      "name": "derivedIndex",
-      "meaning": "derivedIndex"
-    },
-    {
-      "name": "events",
-      "meaning": "events"
-    },
-    {
-      "name": "executeSearch",
-      "meaning": "executeSearch"
-    },
-    {
-      "name": "existsSync",
-      "meaning": "existsSync"
-    },
-    {
-      "name": "gateFunctions",
-      "meaning": "gateFunctions"
-    },
-    {
       "name": "interruptReason",
       "meaning": "interruptReason"
-    },
-    {
-      "name": "listeners",
-      "meaning": "listeners"
-    },
-    {
-      "name": "manifestAttempts",
-      "meaning": "manifestAttempts"
-    },
-    {
-      "name": "ownerFunctions",
-      "meaning": "ownerFunctions"
-    },
-    {
-      "name": "path",
-      "meaning": "path"
-    },
-    {
-      "name": "python",
-      "meaning": "python"
     },
     {
       "name": "queryError",
       "meaning": "queryError"
     },
     {
-      "name": "receiverFunctions",
-      "meaning": "receiverFunctions"
-    },
-    {
-      "name": "renderResults",
-      "meaning": "renderResults"
-    },
-    {
-      "name": "requestFailures",
-      "meaning": "requestFailures"
+      "name": "resolve",
+      "meaning": "resolve"
     },
     {
       "name": "retryRows",
@@ -1325,108 +213,8 @@
       "meaning": "search"
     },
     {
-      "name": "spawnSync",
-      "meaning": "spawnSync"
-    },
-    {
-      "name": "spinePath",
-      "meaning": "spinePath"
-    },
-    {
-      "name": "suppliedArrivalFields",
-      "meaning": "suppliedArrivalFields"
-    },
-    {
-      "name": "testLink",
-      "meaning": "testLink"
-    },
-    {
-      "name": "vm",
-      "meaning": "vm"
-    },
-    {
-      "name": "waitForCapturedMap",
-      "meaning": "waitForCapturedMap"
-    },
-    {
-      "name": "widerPath",
-      "meaning": "widerPath"
-    },
-    {
-      "name": "xhr",
-      "meaning": "xhr"
-    },
-    {
-      "name": "ACTIVE_TARGET",
-      "meaning": "ACTIVE_TARGET"
-    },
-    {
-      "name": "ATLAS",
-      "meaning": "ATLAS"
-    },
-    {
-      "name": "ATLAS_BASE",
-      "meaning": "ATLAS_BASE"
-    },
-    {
-      "name": "ATLAS_DEEP_LINK_CONTRACT",
-      "meaning": "ATLAS_DEEP_LINK_CONTRACT"
-    },
-    {
-      "name": "ATLAS_OUTPUT",
-      "meaning": "ATLAS_OUTPUT"
-    },
-    {
-      "name": "ATLAS_V8_DEEP_LINK_CONTRACT",
-      "meaning": "ATLAS_V8_DEEP_LINK_CONTRACT"
-    },
-    {
-      "name": "ATLAS_V9_DEEP_LINK_CONTRACT",
-      "meaning": "ATLAS_V9_DEEP_LINK_CONTRACT"
-    },
-    {
-      "name": "BASE",
-      "meaning": "BASE"
-    },
-    {
-      "name": "BASE_URL",
-      "meaning": "BASE_URL"
-    },
-    {
-      "name": "BUCKETS",
-      "meaning": "BUCKETS"
-    },
-    {
       "name": "Buffer",
       "meaning": "Buffer"
-    },
-    {
-      "name": "CANONICAL_RECEIVER",
-      "meaning": "CANONICAL_RECEIVER"
-    },
-    {
-      "name": "COMPILER_FILE",
-      "meaning": "COMPILER_FILE"
-    },
-    {
-      "name": "COMPILER_METHOD",
-      "meaning": "COMPILER_METHOD"
-    },
-    {
-      "name": "CONTROL_CHARACTER",
-      "meaning": "CONTROL_CHARACTER"
-    },
-    {
-      "name": "DEFAULT_ZOOM",
-      "meaning": "DEFAULT_ZOOM"
-    },
-    {
-      "name": "DETAIL_SOURCES",
-      "meaning": "DETAIL_SOURCES"
-    },
-    {
-      "name": "EXPECTED_PARAMETERS",
-      "meaning": "EXPECTED_PARAMETERS"
     },
     {
       "name": "Event",
@@ -1437,176 +225,12 @@
       "meaning": "FIELD"
     },
     {
-      "name": "GENERATION",
-      "meaning": "GENERATION"
-    },
-    {
-      "name": "GRIDATLAS_RECEIVER",
-      "meaning": "GRIDATLAS_RECEIVER"
-    },
-    {
-      "name": "HTML_OUTPUT",
-      "meaning": "HTML_OUTPUT"
-    },
-    {
-      "name": "IDENTITY_PARAM",
-      "meaning": "IDENTITY_PARAM"
-    },
-    {
-      "name": "IDENTITY_ROUTING",
-      "meaning": "IDENTITY_ROUTING"
-    },
-    {
-      "name": "INPUTS",
-      "meaning": "INPUTS"
-    },
-    {
-      "name": "MANIFEST_OUTPUT",
-      "meaning": "MANIFEST_OUTPUT"
-    },
-    {
-      "name": "MIME",
-      "meaning": "MIME"
-    },
-    {
-      "name": "NAME",
-      "meaning": "NAME"
-    },
-    {
-      "name": "OUTPUT",
-      "meaning": "OUTPUT"
-    },
-    {
-      "name": "PARAMS",
-      "meaning": "PARAMS"
-    },
-    {
-      "name": "PARENT",
-      "meaning": "PARENT"
-    },
-    {
-      "name": "PARENT_ARTIFACT",
-      "meaning": "PARENT_ARTIFACT"
-    },
-    {
-      "name": "PARENT_ARTIFACT_DIGEST",
-      "meaning": "PARENT_ARTIFACT_DIGEST"
-    },
-    {
-      "name": "PARENT_GENERATION",
-      "meaning": "PARENT_GENERATION"
-    },
-    {
-      "name": "PARENT_MANIFEST_SHA256",
-      "meaning": "PARENT_MANIFEST_SHA256"
-    },
-    {
-      "name": "PARENT_RUN",
-      "meaning": "PARENT_RUN"
-    },
-    {
-      "name": "PARENT_RUNTIME",
-      "meaning": "PARENT_RUNTIME"
-    },
-    {
-      "name": "PARENT_SOURCE",
-      "meaning": "PARENT_SOURCE"
-    },
-    {
-      "name": "PINNED_SHA256",
-      "meaning": "PINNED_SHA256"
-    },
-    {
-      "name": "PROJECTS",
-      "meaning": "PROJECTS"
-    },
-    {
-      "name": "PROJECTS_SHA256",
-      "meaning": "PROJECTS_SHA256"
-    },
-    {
-      "name": "PROTECTED_RECOVERY_COMMIT",
-      "meaning": "PROTECTED_RECOVERY_COMMIT"
-    },
-    {
-      "name": "QUERY_PARAMETER_ORDER",
-      "meaning": "QUERY_PARAMETER_ORDER"
-    },
-    {
-      "name": "RECEIVER",
-      "meaning": "RECEIVER"
-    },
-    {
-      "name": "REGISTRY_OUTPUT",
-      "meaning": "REGISTRY_OUTPUT"
-    },
-    {
-      "name": "REGISTRY_SCHEMA",
-      "meaning": "REGISTRY_SCHEMA"
-    },
-    {
-      "name": "RELEASE_ID",
-      "meaning": "RELEASE_ID"
-    },
-    {
-      "name": "REPD_LAYER_IDS",
-      "meaning": "REPD_LAYER_IDS"
-    },
-    {
-      "name": "REPD_REF",
-      "meaning": "REPD_REF"
-    },
-    {
-      "name": "RETIRED_RECEIVERS",
-      "meaning": "RETIRED_RECEIVERS"
-    },
-    {
-      "name": "ROLLBACK_GENERATION",
-      "meaning": "ROLLBACK_GENERATION"
-    },
-    {
-      "name": "ROOT",
-      "meaning": "ROOT"
-    },
-    {
-      "name": "RUNTIME_OUTPUT",
-      "meaning": "RUNTIME_OUTPUT"
-    },
-    {
-      "name": "SOURCE",
-      "meaning": "SOURCE"
-    },
-    {
-      "name": "SOURCE_PARENT",
-      "meaning": "SOURCE_PARENT"
-    },
-    {
-      "name": "SOURCE_PARENT_COMMIT",
-      "meaning": "SOURCE_PARENT_COMMIT"
-    },
-    {
       "name": "START",
       "meaning": "START"
     },
     {
-      "name": "TECHNOLOGIES",
-      "meaning": "TECHNOLOGIES"
-    },
-    {
-      "name": "TRUSTED_SHA256",
-      "meaning": "TRUSTED_SHA256"
-    },
-    {
-      "name": "TRUSTED_SOURCE",
-      "meaning": "TRUSTED_SOURCE"
-    },
-    {
       "name": "a",
       "meaning": "a"
-    },
-    {
-      "name": "access",
-      "meaning": "access"
     },
     {
       "name": "actually",
@@ -1625,56 +249,12 @@
       "meaning": "arrival"
     },
     {
-      "name": "assert",
-      "meaning": "assert"
-    },
-    {
-      "name": "atlasOrigin",
-      "meaning": "atlasOrigin"
-    },
-    {
-      "name": "bucket",
-      "meaning": "bucket"
-    },
-    {
-      "name": "constants",
-      "meaning": "constants"
-    },
-    {
-      "name": "createHash",
-      "meaning": "createHash"
-    },
-    {
-      "name": "dictionary",
-      "meaning": "dictionary"
-    },
-    {
-      "name": "failures",
-      "meaning": "failures"
-    },
-    {
-      "name": "field",
-      "meaning": "field"
-    },
-    {
-      "name": "fileURLToPath",
-      "meaning": "fileURLToPath"
-    },
-    {
       "name": "first",
       "meaning": "first"
     },
     {
-      "name": "fs",
-      "meaning": "fs"
-    },
-    {
       "name": "genuinely",
       "meaning": "genuinely"
-    },
-    {
-      "name": "get",
-      "meaning": "get"
     },
     {
       "name": "getComputedStyle",
@@ -1685,24 +265,12 @@
       "meaning": "has"
     },
     {
-      "name": "httpErrors",
-      "meaning": "httpErrors"
-    },
-    {
       "name": "is",
       "meaning": "is"
     },
     {
-      "name": "layerIdForBucket",
-      "meaning": "layerIdForBucket"
-    },
-    {
       "name": "leave",
       "meaning": "leave"
-    },
-    {
-      "name": "mkdir",
-      "meaning": "mkdir"
     },
     {
       "name": "never",
@@ -1717,22 +285,6 @@
       "meaning": "outcome"
     },
     {
-      "name": "passed",
-      "meaning": "passed"
-    },
-    {
-      "name": "pathToFileURL",
-      "meaning": "pathToFileURL"
-    },
-    {
-      "name": "payload",
-      "meaning": "payload"
-    },
-    {
-      "name": "pipelineOrigin",
-      "meaning": "pipelineOrigin"
-    },
-    {
       "name": "process",
       "meaning": "process"
     },
@@ -1741,36 +293,8 @@
       "meaning": "produced"
     },
     {
-      "name": "readFile",
-      "meaning": "readFile"
-    },
-    {
-      "name": "receiverErrors",
-      "meaning": "receiverErrors"
-    },
-    {
-      "name": "receiverFailures",
-      "meaning": "receiverFailures"
-    },
-    {
-      "name": "record",
-      "meaning": "record"
-    },
-    {
-      "name": "requireGeometry",
-      "meaning": "requireGeometry"
-    },
-    {
-      "name": "server",
-      "meaning": "server"
-    },
-    {
-      "name": "spec",
-      "meaning": "spec"
-    },
-    {
-      "name": "stat",
-      "meaning": "stat"
+      "name": "seen",
+      "meaning": "seen"
     },
     {
       "name": "stranded",
@@ -1793,40 +317,15 @@
       "meaning": "time"
     },
     {
-      "name": "trustedAtlasUrl",
-      "meaning": "trustedAtlasUrl"
-    },
-    {
       "name": "until",
       "meaning": "until"
     },
     {
       "name": "visible",
       "meaning": "visible"
-    },
-    {
-      "name": "writeFile",
-      "meaning": "writeFile"
     }
   ],
-  "decisions": [
-    "EARTH_RADIUS_KM: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "HIT_RADIUS_EDGE_PX: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "HIT_RADIUS_VERTEX_PX: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "MAX_RADIUS_KM: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "RADIUS_MAX: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "RADIUS_MIN: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "clearRadiusCircle: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "drawRadiusCircle: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "radiusAreaCenter: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "radiusAreaMarker: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "radiusAreaMode: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "radiusCenter: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "radiusInput: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "radiusMarker: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "radiusMode: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently",
-    "zdRadiusInput: which earth radius is true is an open decision (element Ek, EARTH_KM evidence pack); do not pick one silently"
-  ],
+  "decisions": [],
   "parts": [
     {
       "kind": "block",
@@ -1903,6 +402,18 @@
           "commit": "be057061311fc088f27a4ff38756d5feb295175d",
           "path": "sources/v9-extracts/nearest-search.mjs",
           "saved": "Vn/nearest-search.mjs"
+        },
+        {
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Vn/nearest-search.mjs",
+          "saved": "Vn/nearest-search.mjs"
+        },
+        {
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Vn/v9-nearest-search.js",
+          "saved": "Vn/v9-nearest-search.js"
         }
       ]
     },
@@ -1977,6 +488,18 @@
           "saved": "Ps/202609071213-place-global-search-v9-5.js"
         },
         {
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js",
+          "saved": "Ps/202609071213-place-global-search-v9-5.js"
+        },
+        {
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js",
+          "saved": "Ps/202609071213-place-global-search-v9-5.js"
+        },
+        {
           "repo": "Ventusltd/gridatlas",
           "commit": "ece848117a6d21b7fccb232557194877698c48a9",
           "path": "tools/proofs/202609040219-transit-layer-availability.browser.mjs",
@@ -1995,28 +518,16 @@
           "saved": "Ps/202608282348-verify-v9-6-2-equivalence.mjs"
         },
         {
-          "repo": "Ventusltd/gridatlas",
-          "commit": "ece848117a6d21b7fccb232557194877698c48a9",
-          "path": "tools/proofs/202609040229-arrival-identity-corpus.proof.mjs",
-          "saved": "Ps/202609040229-arrival-identity-corpus.proof.mjs"
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs",
+          "saved": "Ps/202609040219-transit-layer-availability.browser.mjs"
         },
         {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "testcode/202609051152/atlas/cartridges/202609041945-place-global-search-v9-5.js",
-          "saved": "Ps/202609041945-place-global-search-v9-5.js"
-        },
-        {
-          "repo": "Ventusltd/gridatlas",
-          "commit": "ece848117a6d21b7fccb232557194877698c48a9",
-          "path": "atlas/parts/202609040229-place-global-search-arrival-identity.js",
-          "saved": "Ps/202609040229-place-global-search-arrival-identity.js"
-        },
-        {
-          "repo": "Ventusltd/testcode",
-          "commit": "e8f6222226a7254ce08091b549803c3c1b92d979",
-          "path": "sandbox/202609051152/atlas/cartridges/202609041945-place-global-search-v9-5.js",
-          "saved": "Ps/202609041945-place-global-search-v9-5.js"
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs",
+          "saved": "Ps/202609040229-arrival-identity.browser.mjs"
         }
       ]
     },
@@ -2058,22 +569,22 @@
           "saved": "Dt/202608310050-calibrate-design-freeze.py"
         },
         {
-          "repo": "Ventusltd/claude",
-          "commit": "df9da02425fdf0c65d11a84f32cd9b3ef927b309",
-          "path": "sessions/202609021813-wider-fleet-and-deep-link/scripts/render_transcript.py",
-          "saved": "Dt/render_transcript.py"
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Dt/202608310050-build-n1-deep-link-candidates.py",
+          "saved": "Dt/202608310050-build-n1-deep-link-candidates.py"
         },
         {
-          "repo": "Ventusltd/companies",
-          "commit": "ac70a37408d4f434e89e8a80cc36d40e450d3cfb",
-          "path": "scripts/202608300232-build-atlas-v9-company-repd-links.py",
-          "saved": "Dt/202608300232-build-atlas-v9-company-repd-links.py"
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Dt/202608310050-build-repd-ref-index.py",
+          "saved": "Dt/202608310050-build-repd-ref-index.py"
         },
         {
-          "repo": "Ventusltd/data-gridatlas",
-          "commit": "8bf88da9e210ce9f61dc0398869d3369f3fa2445",
-          "path": "atman/202608291410-verify-repd-routing-release.py",
-          "saved": "Dt/202608291410-verify-repd-routing-release.py"
+          "repo": "Ventusltd/code-generator",
+          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "path": "apps/substation-finder/Dt/202608310050-calibrate-design-freeze.py",
+          "saved": "Dt/202608310050-calibrate-design-freeze.py"
         }
       ]
     }
