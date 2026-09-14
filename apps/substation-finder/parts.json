@@ -2,7 +2,7 @@
   "schema": "code-generator.recipe.v2",
   "name": "substation-finder",
   "title": "Substation finder on a map",
-  "generated_utc": "2026-09-14T09:43:20.296Z",
+  "generated_utc": "2026-09-14T12:29:15.601Z",
   "blocks": [
     "Si",
     "Vn",
@@ -114,11 +114,11 @@
     },
     {
       "name": "localStorage",
-      "meaning": "localStorage"
+      "meaning": "browser storage"
     },
     {
       "name": "location",
-      "meaning": "location"
+      "meaning": "the page address"
     },
     {
       "name": "maplibregl",
@@ -130,7 +130,7 @@
     },
     {
       "name": "navigator",
-      "meaning": "navigator"
+      "meaning": "a web browser"
     },
     {
       "name": "obj",
@@ -392,28 +392,28 @@
       "functions": 2,
       "files": [
         {
-          "repo": "Ventusltd/ventus-grid-engine",
-          "commit": "be057061311fc088f27a4ff38756d5feb295175d",
-          "path": "engine/v9-nearest-search.js",
-          "saved": "Vn/v9-nearest-search.js"
-        },
-        {
-          "repo": "Ventusltd/ventus-grid-engine",
-          "commit": "be057061311fc088f27a4ff38756d5feb295175d",
-          "path": "sources/v9-extracts/nearest-search.mjs",
-          "saved": "Vn/nearest-search.mjs"
-        },
-        {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Vn/nearest-search.mjs",
           "saved": "Vn/nearest-search.mjs"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Vn/v9-nearest-search.js",
           "saved": "Vn/v9-nearest-search.js"
+        },
+        {
+          "repo": "Ventusltd/ventus-grid-engine",
+          "commit": "e3deb3d0546cad0b63f2044a4a0e1af2bd3162d6",
+          "path": "engine/v9-nearest-search.js",
+          "saved": "Vn/v9-nearest-search.js"
+        },
+        {
+          "repo": "Ventusltd/ventus-grid-engine",
+          "commit": "e3deb3d0546cad0b63f2044a4a0e1af2bd3162d6",
+          "path": "sources/v9-extracts/nearest-search.mjs",
+          "saved": "Vn/nearest-search.mjs"
         }
       ]
     },
@@ -489,13 +489,13 @@
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js",
           "saved": "Ps/202609071213-place-global-search-v9-5.js"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js",
           "saved": "Ps/202609071213-place-global-search-v9-5.js"
         },
@@ -519,13 +519,13 @@
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs",
           "saved": "Ps/202609040219-transit-layer-availability.browser.mjs"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs",
           "saved": "Ps/202609040229-arrival-identity.browser.mjs"
         }
@@ -570,19 +570,19 @@
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Dt/202608310050-build-n1-deep-link-candidates.py",
           "saved": "Dt/202608310050-build-n1-deep-link-candidates.py"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Dt/202608310050-build-repd-ref-index.py",
           "saved": "Dt/202608310050-build-repd-ref-index.py"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "f282a414800d52ca9ebf298e89fb981d43c983d3",
+          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
           "path": "apps/substation-finder/Dt/202608310050-calibrate-design-freeze.py",
           "saved": "Dt/202608310050-calibrate-design-freeze.py"
         }

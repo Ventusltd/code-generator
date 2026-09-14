@@ -1,6 +1,6 @@
 # Substation finder on a map
 
-Built 2026-09-14 09:43 UTC from 5 parts of the [periodic table](https://ventusltd.github.io/stars/table.html). Rebuild with:
+Built 2026-09-14 12:29 UTC from 5 parts of the [periodic table](https://ventusltd.github.io/stars/table.html). Rebuild with:
 
 ```
 node generate.mjs --name substation-finder --blocks Si,Vn,Ug,Ps,Dt
@@ -29,14 +29,14 @@ A plug-in part of the GridAtlas map.
 
 Finds the nearest substations and lines to a point, the search the atlas runs on every click.
 
-2 functions inside · from ventus-grid-engine, code-generator
+2 functions inside · from code-generator, ventus-grid-engine
 
 | file | copied to | source |
 |---|---|---|
-| engine/v9-nearest-search.js | Vn/v9-nearest-search.js | [ventus-grid-engine](https://github.com/Ventusltd/ventus-grid-engine/blob/be057061311fc088f27a4ff38756d5feb295175d/engine/v9-nearest-search.js) |
-| sources/v9-extracts/nearest-search.mjs | Vn/nearest-search.mjs | [ventus-grid-engine](https://github.com/Ventusltd/ventus-grid-engine/blob/be057061311fc088f27a4ff38756d5feb295175d/sources/v9-extracts/nearest-search.mjs) |
-| apps/substation-finder/Vn/nearest-search.mjs | Vn/nearest-search.mjs | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Vn/nearest-search.mjs) |
-| apps/substation-finder/Vn/v9-nearest-search.js | Vn/v9-nearest-search.js | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Vn/v9-nearest-search.js) |
+| apps/substation-finder/Vn/nearest-search.mjs | Vn/nearest-search.mjs | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Vn/nearest-search.mjs) |
+| apps/substation-finder/Vn/v9-nearest-search.js | Vn/v9-nearest-search.js | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Vn/v9-nearest-search.js) |
+| engine/v9-nearest-search.js | Vn/v9-nearest-search.js | [ventus-grid-engine](https://github.com/Ventusltd/ventus-grid-engine/blob/e3deb3d0546cad0b63f2044a4a0e1af2bd3162d6/engine/v9-nearest-search.js) |
+| sources/v9-extracts/nearest-search.mjs | Vn/nearest-search.mjs | [ventus-grid-engine](https://github.com/Ventusltd/ventus-grid-engine/blob/e3deb3d0546cad0b63f2044a4a0e1af2bd3162d6/sources/v9-extracts/nearest-search.mjs) |
 
 ### Ug · #33 · uk-gazetteer-flyto
 
@@ -64,13 +64,13 @@ Search any UK place or project, fly the map there, and arrive on the exact featu
 | file | copied to | source |
 |---|---|---|
 | atlas/cartridges/202609071213-place-global-search-v9-5.js | Ps/202609071213-place-global-search-v9-5.js | [gridatlas](https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/atlas/cartridges/202609071213-place-global-search-v9-5.js) |
-| apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js | Ps/202609071213-place-global-search-v9-5.js | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js) |
-| apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js | Ps/202609071213-place-global-search-v9-5.js | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js) |
+| apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js | Ps/202609071213-place-global-search-v9-5.js | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js) |
+| apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js | Ps/202609071213-place-global-search-v9-5.js | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js) |
 | tools/proofs/202609040219-transit-layer-availability.browser.mjs | Ps/202609040219-transit-layer-availability.browser.mjs | [gridatlas](https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/tools/proofs/202609040219-transit-layer-availability.browser.mjs) |
 | tools/proofs/202609040229-arrival-identity.browser.mjs | Ps/202609040229-arrival-identity.browser.mjs | [gridatlas](https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/tools/proofs/202609040229-arrival-identity.browser.mjs) |
 | atman/202608282348-verify-v9-6-2-equivalence.mjs | Ps/202608282348-verify-v9-6-2-equivalence.mjs | [pipelinenews](https://github.com/Ventusltd/pipelinenews/blob/4980096b57cb35f63ad2d80bded5687beb2a9532/atman/202608282348-verify-v9-6-2-equivalence.mjs) |
-| apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs | Ps/202609040219-transit-layer-availability.browser.mjs | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs) |
-| apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs | Ps/202609040229-arrival-identity.browser.mjs | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs) |
+| apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs | Ps/202609040219-transit-layer-availability.browser.mjs | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs) |
+| apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs | Ps/202609040229-arrival-identity.browser.mjs | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs) |
 
 ### Dt · #47 · The MAP button (deep-link contract)
 
@@ -85,9 +85,9 @@ The contract every MAP link obeys, so a link always arrives on the right feature
 | 202608310050-gridatlas-next-version-builders/tools/202608310050-build-n1-deep-link-candidates.py | Dt/202608310050-build-n1-deep-link-candidates.py | [gridatlas](https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/202608310050-gridatlas-next-version-builders/tools/202608310050-build-n1-deep-link-candidates.py) |
 | 202608310050-gridatlas-next-version-builders/tools/202608310050-build-repd-ref-index.py | Dt/202608310050-build-repd-ref-index.py | [gridatlas](https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/202608310050-gridatlas-next-version-builders/tools/202608310050-build-repd-ref-index.py) |
 | 202608310050-gridatlas-next-version-builders/tools/202608310050-calibrate-design-freeze.py | Dt/202608310050-calibrate-design-freeze.py | [gridatlas](https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/202608310050-gridatlas-next-version-builders/tools/202608310050-calibrate-design-freeze.py) |
-| apps/substation-finder/Dt/202608310050-build-n1-deep-link-candidates.py | Dt/202608310050-build-n1-deep-link-candidates.py | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Dt/202608310050-build-n1-deep-link-candidates.py) |
-| apps/substation-finder/Dt/202608310050-build-repd-ref-index.py | Dt/202608310050-build-repd-ref-index.py | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Dt/202608310050-build-repd-ref-index.py) |
-| apps/substation-finder/Dt/202608310050-calibrate-design-freeze.py | Dt/202608310050-calibrate-design-freeze.py | [code-generator](https://github.com/Ventusltd/code-generator/blob/f282a414800d52ca9ebf298e89fb981d43c983d3/apps/substation-finder/Dt/202608310050-calibrate-design-freeze.py) |
+| apps/substation-finder/Dt/202608310050-build-n1-deep-link-candidates.py | Dt/202608310050-build-n1-deep-link-candidates.py | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Dt/202608310050-build-n1-deep-link-candidates.py) |
+| apps/substation-finder/Dt/202608310050-build-repd-ref-index.py | Dt/202608310050-build-repd-ref-index.py | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Dt/202608310050-build-repd-ref-index.py) |
+| apps/substation-finder/Dt/202608310050-calibrate-design-freeze.py | Dt/202608310050-calibrate-design-freeze.py | [code-generator](https://github.com/Ventusltd/code-generator/blob/e1217f540cf7ced342109a87f118627c1330cdbd/apps/substation-finder/Dt/202608310050-calibrate-design-freeze.py) |
 
 ## Still needed from outside
 
@@ -118,11 +118,11 @@ These names are used by the parts but not defined by any of them. Decide each on
 - `headerLines` — headerLines
 - `lat` — lat
 - `layersMarker` — layersMarker
-- `localStorage` — localStorage
-- `location` — location
+- `localStorage` — browser storage
+- `location` — the page address
 - `maplibregl` — the MapLibre map library
 - `min` — min
-- `navigator` — navigator
+- `navigator` — a web browser
 - `obj` — obj
 - `performance` — performance
 - `position` — position

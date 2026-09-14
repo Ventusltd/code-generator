@@ -3,7 +3,7 @@ schema_version: spider-features-v1
 site: "https://ventusltd.github.io/code-generator/"
 graphs:
   - id: "generated-apps"
-    title: "Generated apps"
+    title: "Applications"
     path: "https://ventusltd.github.io/code-generator/spider/graphs/apps.json"
     edges_path: null
     source_spider: "code-generator (generate.mjs)"
