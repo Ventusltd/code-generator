@@ -1,0 +1,130 @@
+{
+  "schema": "code-generator.work-order.v1",
+  "id": "substation-finder-4",
+  "key": "pair:Vn+Ps",
+  "kind": "pair",
+  "app": "substation-finder",
+  "title": "Vn + Ps: test Nearest substation search with Place search and arrival for substation-finder",
+  "missing": {
+    "name": "Vn+Ps",
+    "type": "compatibility test",
+    "meaning": "Nearest substation search and Place search and arrival have never been loaded together (no evidence either way)."
+  },
+  "used_in": {
+    "blocks": [
+      {
+        "symbol": "Vn",
+        "number": 18,
+        "title": "Nearest substation search"
+      },
+      {
+        "symbol": "Ps",
+        "number": 48,
+        "title": "Place search and arrival"
+      }
+    ],
+    "families": [],
+    "files": [
+      {
+        "repo": "Ventusltd/code-generator",
+        "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+        "path": "apps/substation-finder/Vn/nearest-search.mjs",
+        "link": "https://github.com/Ventusltd/code-generator/blob/130a182bd4ec84525f985700bab9448921812ba5/apps/substation-finder/Vn/nearest-search.mjs",
+        "saved": "Vn/nearest-search.mjs"
+      },
+      {
+        "repo": "Ventusltd/code-generator",
+        "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+        "path": "apps/substation-finder/Vn/v9-nearest-search.js",
+        "link": "https://github.com/Ventusltd/code-generator/blob/130a182bd4ec84525f985700bab9448921812ba5/apps/substation-finder/Vn/v9-nearest-search.js",
+        "saved": "Vn/v9-nearest-search.js"
+      },
+      {
+        "repo": "Ventusltd/ventus-grid-engine",
+        "commit": "ba78b600f3004d6873e8f442f296f5b27675cfa7",
+        "path": "engine/v9-nearest-search.js",
+        "link": "https://github.com/Ventusltd/ventus-grid-engine/blob/ba78b600f3004d6873e8f442f296f5b27675cfa7/engine/v9-nearest-search.js",
+        "saved": "Vn/v9-nearest-search.js"
+      },
+      {
+        "repo": "Ventusltd/ventus-grid-engine",
+        "commit": "ba78b600f3004d6873e8f442f296f5b27675cfa7",
+        "path": "sources/v9-extracts/nearest-search.mjs",
+        "link": "https://github.com/Ventusltd/ventus-grid-engine/blob/ba78b600f3004d6873e8f442f296f5b27675cfa7/sources/v9-extracts/nearest-search.mjs",
+        "saved": "Vn/nearest-search.mjs"
+      },
+      {
+        "repo": "Ventusltd/gridatlas",
+        "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+        "path": "atlas/cartridges/202609071213-place-global-search-v9-5.js",
+        "link": "https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/atlas/cartridges/202609071213-place-global-search-v9-5.js",
+        "saved": "Ps/202609071213-place-global-search-v9-5.js"
+      },
+      {
+        "repo": "Ventusltd/code-generator",
+        "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+        "path": "apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js",
+        "link": "https://github.com/Ventusltd/code-generator/blob/130a182bd4ec84525f985700bab9448921812ba5/apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js",
+        "saved": "Ps/202609071213-place-global-search-v9-5.js"
+      },
+      {
+        "repo": "Ventusltd/code-generator",
+        "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+        "path": "apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js",
+        "link": "https://github.com/Ventusltd/code-generator/blob/130a182bd4ec84525f985700bab9448921812ba5/apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js",
+        "saved": "Ps/202609071213-place-global-search-v9-5.js"
+      },
+      {
+        "repo": "Ventusltd/gridatlas",
+        "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+        "path": "tools/proofs/202609040219-transit-layer-availability.browser.mjs",
+        "link": "https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/tools/proofs/202609040219-transit-layer-availability.browser.mjs",
+        "saved": "Ps/202609040219-transit-layer-availability.browser.mjs"
+      },
+      {
+        "repo": "Ventusltd/gridatlas",
+        "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+        "path": "tools/proofs/202609040229-arrival-identity.browser.mjs",
+        "link": "https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/tools/proofs/202609040229-arrival-identity.browser.mjs",
+        "saved": "Ps/202609040229-arrival-identity.browser.mjs"
+      },
+      {
+        "repo": "Ventusltd/pipelinenews",
+        "commit": "4980096b57cb35f63ad2d80bded5687beb2a9532",
+        "path": "atman/202608282348-verify-v9-6-2-equivalence.mjs",
+        "link": "https://github.com/Ventusltd/pipelinenews/blob/4980096b57cb35f63ad2d80bded5687beb2a9532/atman/202608282348-verify-v9-6-2-equivalence.mjs",
+        "saved": "Ps/202608282348-verify-v9-6-2-equivalence.mjs"
+      },
+      {
+        "repo": "Ventusltd/code-generator",
+        "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+        "path": "apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs",
+        "link": "https://github.com/Ventusltd/code-generator/blob/130a182bd4ec84525f985700bab9448921812ba5/apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs",
+        "saved": "Ps/202609040219-transit-layer-availability.browser.mjs"
+      },
+      {
+        "repo": "Ventusltd/code-generator",
+        "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+        "path": "apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs",
+        "link": "https://github.com/Ventusltd/code-generator/blob/130a182bd4ec84525f985700bab9448921812ba5/apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs",
+        "saved": "Ps/202609040229-arrival-identity.browser.mjs"
+      }
+    ]
+  },
+  "must_provide": [
+    {
+      "name": "tests/Vn+Ps",
+      "type": "a recorded composition test: the two blocks' files loaded together, every error listed, verdict proven or fails"
+    }
+  ],
+  "acceptance": "https://ventusltd.github.io/code-generator/apps/substation-finder/index.html loads the files of Vn and Ps with no error attributed to either; the chemistry for Vn+Ps on the periodic table changes from untested to a verdict with evidence.",
+  "decisions": [],
+  "brief": "Blocks Vn (Nearest substation search) and Ps (Place search and arrival) are chosen together in substation-finder but the periodic table has no evidence they work together. Load the files listed (the assembly page apps/substation-finder/index.html does this in order) and record what happens: which file throws, on what name, and whether the two blocks need the same value under different names. Report the result as a composition test so the table can carry a verdict; do not change the copied files.",
+  "status": "open",
+  "issue": {
+    "number": 4,
+    "url": "https://github.com/Ventusltd/code-generator/issues/4"
+  },
+  "created_utc": "2026-09-14T13:00:32.930Z",
+  "updated_utc": "2026-09-14T13:00:52.380Z"
+}

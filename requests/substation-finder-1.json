@@ -1,0 +1,97 @@
+{
+  "schema": "code-generator.work-order.v1",
+  "id": "substation-finder-1",
+  "key": "need:maplibregl",
+  "kind": "library",
+  "app": "substation-finder",
+  "title": "maplibregl: supply the library for substation-finder",
+  "missing": {
+    "name": "maplibregl",
+    "type": "library (global object)",
+    "meaning": "the MapLibre map library"
+  },
+  "used_in": {
+    "blocks": [
+      {
+        "symbol": "Si",
+        "number": 35,
+        "title": "substation-intelligence"
+      }
+    ],
+    "families": [],
+    "files": [
+      {
+        "repo": "Ventusltd/gridatlas",
+        "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+        "path": "atlas/cartridges/202609062358-substation-intelligence-v9-63.js",
+        "line": 30,
+        "link": "https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/atlas/cartridges/202609062358-substation-intelligence-v9-63.js#L30",
+        "saved": "Si/202609062358-substation-intelligence-v9-63.js"
+      },
+      {
+        "repo": "Ventusltd/gridatlas",
+        "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+        "path": "atlas/parts/202609040045-ventus-corev8engine-deep-link-receiver.js",
+        "line": 4,
+        "link": "https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/atlas/parts/202609040045-ventus-corev8engine-deep-link-receiver.js#L4",
+        "saved": "Si/202609040045-ventus-corev8engine-deep-link-receiver.js"
+      },
+      {
+        "repo": "Ventusltd/gridatlas",
+        "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+        "path": "atlas/releases/202608300453-atlas-v9/ventus-corev8engine.js",
+        "line": 4,
+        "link": "https://github.com/Ventusltd/gridatlas/blob/ece848117a6d21b7fccb232557194877698c48a9/atlas/releases/202608300453-atlas-v9/ventus-corev8engine.js#L4",
+        "saved": "Si/ventus-corev8engine.js"
+      },
+      {
+        "repo": "Ventusltd/code-generator",
+        "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+        "path": "apps/substation-finder/Si/ventus-corev7engine.js",
+        "line": 4,
+        "link": "https://github.com/Ventusltd/code-generator/blob/130a182bd4ec84525f985700bab9448921812ba5/apps/substation-finder/Si/ventus-corev7engine.js#L4",
+        "saved": "Si/ventus-corev7engine.js"
+      },
+      {
+        "repo": "Ventusltd/code-generator",
+        "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+        "path": "apps/substation-finder/Si/ventus-corev8engine.js",
+        "line": 4,
+        "link": "https://github.com/Ventusltd/code-generator/blob/130a182bd4ec84525f985700bab9448921812ba5/apps/substation-finder/Si/ventus-corev8engine.js#L4",
+        "saved": "Si/ventus-corev8engine.js"
+      },
+      {
+        "repo": "Ventusltd/globalgrid2050",
+        "commit": "065a39d081f5ba131de4001167a11f5920d1fe93",
+        "path": "repd_grid_atlasv7/ventus-corev7engine.js",
+        "line": 4,
+        "link": "https://github.com/Ventusltd/globalgrid2050/blob/065a39d081f5ba131de4001167a11f5920d1fe93/repd_grid_atlasv7/ventus-corev7engine.js#L4",
+        "saved": "Si/ventus-corev7engine.js"
+      },
+      {
+        "repo": "Ventusltd/globalgrid2050",
+        "commit": "065a39d081f5ba131de4001167a11f5920d1fe93",
+        "path": "repd_grid_atlasv8/ventus-corev8engine.js",
+        "line": 4,
+        "link": "https://github.com/Ventusltd/globalgrid2050/blob/065a39d081f5ba131de4001167a11f5920d1fe93/repd_grid_atlasv8/ventus-corev8engine.js#L4",
+        "saved": "Si/ventus-corev8engine.js"
+      }
+    ]
+  },
+  "must_provide": [
+    {
+      "name": "maplibregl",
+      "type": "library (global object)"
+    }
+  ],
+  "acceptance": "https://ventusltd.github.io/code-generator/apps/substation-finder/index.html loads without \"maplibregl is not defined\"; its needs table shows maplibregl as provided.",
+  "decisions": [],
+  "brief": "The app substation-finder uses the library global `maplibregl` (MapLibre GL JS, the map library) in Si, first at Ventusltd/gridatlas/atlas/cartridges/202609062358-substation-intelligence-v9-63.js@ece8481:30. Decide which version the app should load and add one script tag for it to apps/substation-finder/index.html before the parts; record the version and its source URL in this request. Nothing in the copied files may change.",
+  "status": "open",
+  "issue": {
+    "number": 1,
+    "url": "https://github.com/Ventusltd/code-generator/issues/1"
+  },
+  "created_utc": "2026-09-14T13:00:32.930Z",
+  "updated_utc": "2026-09-14T13:00:52.380Z"
+}

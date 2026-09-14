@@ -7,6 +7,6 @@ graphs:
     path: "https://ventusltd.github.io/code-generator/spider/graphs/apps.json"
     edges_path: null
     source_spider: "code-generator (generate.mjs)"
-    description: "Apps built from blocks of the periodic table, wired to the blocks they are made of. Amber apps still need values from their surroundings; the report lists them."
-    nodes: 9
-    edges: 7
+    description: "Apps built from blocks of the periodic table, wired to the blocks they are made of and the work orders still open. Amber apps still need values from their surroundings; the assembly page shows what loads."
+    nodes: 14
+    edges: 12

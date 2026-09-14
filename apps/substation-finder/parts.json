@@ -1,8 +1,8 @@
 {
-  "schema": "code-generator.recipe.v2",
+  "schema": "code-generator.recipe.v3",
   "name": "substation-finder",
   "title": "Substation finder on a map",
-  "generated_utc": "2026-09-14T12:29:15.601Z",
+  "generated_utc": "2026-09-14T13:00:52.380Z",
   "blocks": [
     "Si",
     "Vn",
@@ -13,374 +13,1044 @@
   "families": [],
   "needs": [
     {
-      "name": "BLOCK_CLASS",
-      "meaning": "BLOCK_CLASS"
-    },
-    {
-      "name": "Blob",
-      "meaning": "Blob"
-    },
-    {
-      "name": "CompressionStream",
-      "meaning": "CompressionStream"
-    },
-    {
-      "name": "DEG",
-      "meaning": "degrees-to-radians constant (Ek's neighbour)"
-    },
-    {
-      "name": "File",
-      "meaning": "File"
-    },
-    {
-      "name": "GB_ID",
-      "meaning": "GB_ID"
-    },
-    {
-      "name": "ImageCapture",
-      "meaning": "ImageCapture"
-    },
-    {
-      "name": "LEDGER_ID",
-      "meaning": "LEDGER_ID"
-    },
-    {
-      "name": "MutationObserver",
-      "meaning": "MutationObserver"
-    },
-    {
-      "name": "PANEL_ID",
-      "meaning": "PANEL_ID"
-    },
-    {
-      "name": "ResizeObserver",
-      "meaning": "ResizeObserver"
-    },
-    {
-      "name": "Response",
-      "meaning": "Response"
-    },
-    {
-      "name": "TRAY_ID",
-      "meaning": "TRAY_ID"
-    },
-    {
-      "name": "alert",
-      "meaning": "alert"
-    },
-    {
-      "name": "atob",
-      "meaning": "atob"
-    },
-    {
-      "name": "coord",
-      "meaning": "coord"
-    },
-    {
-      "name": "createImageBitmap",
-      "meaning": "createImageBitmap"
-    },
-    {
-      "name": "doc",
-      "meaning": "doc"
-    },
-    {
-      "name": "document",
-      "meaning": "a web page"
-    },
-    {
-      "name": "e",
-      "meaning": "e"
-    },
-    {
-      "name": "fetch",
-      "meaning": "network access"
-    },
-    {
-      "name": "fileBlocks",
-      "meaning": "fileBlocks"
-    },
-    {
-      "name": "headerLines",
-      "meaning": "headerLines"
-    },
-    {
-      "name": "lat",
-      "meaning": "lat"
-    },
-    {
-      "name": "layersMarker",
-      "meaning": "layersMarker"
-    },
-    {
-      "name": "localStorage",
-      "meaning": "browser storage"
-    },
-    {
-      "name": "location",
-      "meaning": "the page address"
-    },
-    {
       "name": "maplibregl",
-      "meaning": "the MapLibre map library"
-    },
-    {
-      "name": "min",
-      "meaning": "min"
-    },
-    {
-      "name": "navigator",
-      "meaning": "a web browser"
-    },
-    {
-      "name": "obj",
-      "meaning": "obj"
-    },
-    {
-      "name": "performance",
-      "meaning": "performance"
+      "meaning": "the MapLibre map library",
+      "kind": "library",
+      "type": "library (global object)",
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
     },
     {
       "name": "position",
-      "meaning": "position"
-    },
-    {
-      "name": "requestAnimationFrame",
-      "meaning": "requestAnimationFrame"
-    },
-    {
-      "name": "splitIntoVolumes",
-      "meaning": "splitIntoVolumes"
-    },
-    {
-      "name": "subs",
-      "meaning": "subs"
-    },
-    {
-      "name": "then",
-      "meaning": "then"
-    },
-    {
-      "name": "window",
-      "meaning": "a web page"
-    },
-    {
-      "name": "Worker",
-      "meaning": "Worker"
-    },
-    {
-      "name": "crypto",
-      "meaning": "crypto"
-    },
-    {
-      "name": "globalResult",
-      "meaning": "globalResult"
-    },
-    {
-      "name": "history",
-      "meaning": "history"
-    },
-    {
-      "name": "XMLHttpRequest",
-      "meaning": "XMLHttpRequest"
-    },
-    {
-      "name": "claimAgain",
-      "meaning": "claimAgain"
-    },
-    {
-      "name": "interruptReason",
-      "meaning": "interruptReason"
-    },
-    {
-      "name": "queryError",
-      "meaning": "queryError"
+      "meaning": "position",
+      "kind": "block",
+      "type": null,
+      "defined_by": [
+        "Sa"
+      ],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
     },
     {
       "name": "resolve",
-      "meaning": "resolve"
+      "meaning": "resolve",
+      "kind": "block",
+      "type": null,
+      "defined_by": [
+        "Ss",
+        "Wf"
+      ],
+      "used_by": [
+        "Ps"
+      ],
+      "decisions": []
     },
     {
-      "name": "retryRows",
-      "meaning": "retryRows"
+      "name": "BLOCK_CLASS",
+      "meaning": "BLOCK_CLASS",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "coord",
+      "meaning": "coord",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "doc",
+      "meaning": "doc",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "e",
+      "meaning": "e",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "GB_ID",
+      "meaning": "GB_ID",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "globalResult",
+      "meaning": "globalResult",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ug"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "LEDGER_ID",
+      "meaning": "LEDGER_ID",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "min",
+      "meaning": "min",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "obj",
+      "meaning": "obj",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "PANEL_ID",
+      "meaning": "PANEL_ID",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
     },
     {
       "name": "rows",
-      "meaning": "rows"
+      "meaning": "rows",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ps",
+        "Dt"
+      ],
+      "decisions": []
     },
     {
-      "name": "search",
-      "meaning": "search"
+      "name": "subs",
+      "meaning": "subs",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
     },
     {
-      "name": "Buffer",
-      "meaning": "Buffer"
-    },
-    {
-      "name": "Event",
-      "meaning": "Event"
-    },
-    {
-      "name": "FIELD",
-      "meaning": "FIELD"
-    },
-    {
-      "name": "START",
-      "meaning": "START"
-    },
-    {
-      "name": "a",
-      "meaning": "a"
-    },
-    {
-      "name": "actually",
-      "meaning": "actually"
-    },
-    {
-      "name": "again",
-      "meaning": "again"
-    },
-    {
-      "name": "an",
-      "meaning": "an"
-    },
-    {
-      "name": "arrival",
-      "meaning": "arrival"
-    },
-    {
-      "name": "first",
-      "meaning": "first"
-    },
-    {
-      "name": "genuinely",
-      "meaning": "genuinely"
-    },
-    {
-      "name": "getComputedStyle",
-      "meaning": "getComputedStyle"
-    },
-    {
-      "name": "has",
-      "meaning": "has"
-    },
-    {
-      "name": "is",
-      "meaning": "is"
-    },
-    {
-      "name": "leave",
-      "meaning": "leave"
-    },
-    {
-      "name": "never",
-      "meaning": "never"
-    },
-    {
-      "name": "not",
-      "meaning": "not"
-    },
-    {
-      "name": "outcome",
-      "meaning": "outcome"
-    },
-    {
-      "name": "process",
-      "meaning": "process"
-    },
-    {
-      "name": "produced",
-      "meaning": "produced"
-    },
-    {
-      "name": "seen",
-      "meaning": "seen"
-    },
-    {
-      "name": "stranded",
-      "meaning": "stranded"
-    },
-    {
-      "name": "tab",
-      "meaning": "tab"
-    },
-    {
-      "name": "that",
-      "meaning": "that"
-    },
-    {
-      "name": "the",
-      "meaning": "the"
+      "name": "then",
+      "meaning": "then",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
     },
     {
       "name": "time",
-      "meaning": "time"
+      "meaning": "time",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "TRAY_ID",
+      "meaning": "TRAY_ID",
+      "kind": "defined",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "alert",
+      "meaning": "alert",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "atob",
+      "meaning": "atob",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "Blob",
+      "meaning": "Blob",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si",
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "CompressionStream",
+      "meaning": "CompressionStream",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "createImageBitmap",
+      "meaning": "createImageBitmap",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "crypto",
+      "meaning": "crypto",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ug"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "document",
+      "meaning": "a web page",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si",
+        "Ug",
+        "Ps",
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "Event",
+      "meaning": "Event",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "fetch",
+      "meaning": "network access",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [
+        "Pr"
+      ],
+      "used_by": [
+        "Si",
+        "Ug",
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "File",
+      "meaning": "File",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "getComputedStyle",
+      "meaning": "getComputedStyle",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "history",
+      "meaning": "history",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ug",
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "ImageCapture",
+      "meaning": "ImageCapture",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "localStorage",
+      "meaning": "browser storage",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "location",
+      "meaning": "the page address",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si",
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "MutationObserver",
+      "meaning": "MutationObserver",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "navigator",
+      "meaning": "a web browser",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "performance",
+      "meaning": "performance",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si",
+        "Ug"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "requestAnimationFrame",
+      "meaning": "requestAnimationFrame",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "ResizeObserver",
+      "meaning": "ResizeObserver",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "Response",
+      "meaning": "Response",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "window",
+      "meaning": "a web page",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si",
+        "Ug",
+        "Ps",
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "Worker",
+      "meaning": "Worker",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "XMLHttpRequest",
+      "meaning": "XMLHttpRequest",
+      "kind": "browser",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "Buffer",
+      "meaning": "Buffer",
+      "kind": "node",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "process",
+      "meaning": "process",
+      "kind": "node",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "claimAgain",
+      "meaning": "claimAgain",
+      "kind": "absent",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "FIELD",
+      "meaning": "FIELD",
+      "kind": "absent",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "interruptReason",
+      "meaning": "interruptReason",
+      "kind": "absent",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "layersMarker",
+      "meaning": "layersMarker",
+      "kind": "absent",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "queryError",
+      "meaning": "queryError",
+      "kind": "absent",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "retryRows",
+      "meaning": "retryRows",
+      "kind": "absent",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "START",
+      "meaning": "START",
+      "kind": "absent",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "tab",
+      "meaning": "tab",
+      "kind": "absent",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "a",
+      "meaning": "a",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "actually",
+      "meaning": "actually",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "again",
+      "meaning": "again",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "an",
+      "meaning": "an",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "arrival",
+      "meaning": "arrival",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "fileBlocks",
+      "meaning": "fileBlocks",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "first",
+      "meaning": "first",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "genuinely",
+      "meaning": "genuinely",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "has",
+      "meaning": "has",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "headerLines",
+      "meaning": "headerLines",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "is",
+      "meaning": "is",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "leave",
+      "meaning": "leave",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "never",
+      "meaning": "never",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "not",
+      "meaning": "not",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "outcome",
+      "meaning": "outcome",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "produced",
+      "meaning": "produced",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "search",
+      "meaning": "search",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Ps"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "seen",
+      "meaning": "seen",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "splitIntoVolumes",
+      "meaning": "splitIntoVolumes",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Si"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "stranded",
+      "meaning": "stranded",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "that",
+      "meaning": "that",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    },
+    {
+      "name": "the",
+      "meaning": "the",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
     },
     {
       "name": "until",
-      "meaning": "until"
+      "meaning": "until",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
     },
     {
       "name": "visible",
-      "meaning": "visible"
+      "meaning": "visible",
+      "kind": "word",
+      "type": null,
+      "defined_by": [],
+      "used_by": [
+        "Dt"
+      ],
+      "decisions": []
+    }
+  ],
+  "inputs": [
+    "maplibregl"
+  ],
+  "pairs": [
+    {
+      "a": "Si",
+      "b": "Vn",
+      "verdict": "untested",
+      "probability": 0.25,
+      "basis": "no evidence either way"
+    },
+    {
+      "a": "Si",
+      "b": "Ug",
+      "verdict": "unstable",
+      "probability": 0.77,
+      "basis": "3261 of 4216 composition tests green"
+    },
+    {
+      "a": "Si",
+      "b": "Ps",
+      "verdict": "seen together",
+      "probability": 0.9,
+      "basis": "already used together in 5 app folders, never composition-tested"
+    },
+    {
+      "a": "Si",
+      "b": "Dt",
+      "verdict": "seen together",
+      "probability": 0.9,
+      "basis": "already used together in 4 app folders, never composition-tested"
+    },
+    {
+      "a": "Vn",
+      "b": "Ug",
+      "verdict": "untested",
+      "probability": 0.25,
+      "basis": "no evidence either way"
+    },
+    {
+      "a": "Vn",
+      "b": "Ps",
+      "verdict": "untested",
+      "probability": 0.25,
+      "basis": "no evidence either way"
+    },
+    {
+      "a": "Vn",
+      "b": "Dt",
+      "verdict": "untested",
+      "probability": 0.25,
+      "basis": "no evidence either way"
+    },
+    {
+      "a": "Ug",
+      "b": "Ps",
+      "verdict": "seen together",
+      "probability": 0.9,
+      "basis": "already used together in 7 app folders, never composition-tested"
+    },
+    {
+      "a": "Ug",
+      "b": "Dt",
+      "verdict": "seen together",
+      "probability": 0.9,
+      "basis": "already used together in 6 app folders, never composition-tested"
+    },
+    {
+      "a": "Ps",
+      "b": "Dt",
+      "verdict": "seen together",
+      "probability": 0.9,
+      "basis": "already used together in 8 app folders, never composition-tested"
+    }
+  ],
+  "work_orders": [
+    {
+      "id": "substation-finder-1",
+      "key": "need:maplibregl",
+      "title": "maplibregl: supply the library for substation-finder"
+    },
+    {
+      "id": "substation-finder-2",
+      "key": "pair:Si+Vn",
+      "title": "Si + Vn: test substation-intelligence with Nearest substation search for substation-finder"
+    },
+    {
+      "id": "substation-finder-3",
+      "key": "pair:Vn+Ug",
+      "title": "Vn + Ug: test Nearest substation search with uk-gazetteer-flyto for substation-finder"
+    },
+    {
+      "id": "substation-finder-4",
+      "key": "pair:Vn+Ps",
+      "title": "Vn + Ps: test Nearest substation search with Place search and arrival for substation-finder"
+    },
+    {
+      "id": "substation-finder-5",
+      "key": "pair:Vn+Dt",
+      "title": "Vn + Dt: test Nearest substation search with The MAP button (deep-link contract) for substation-finder"
     }
   ],
   "decisions": [],
+  "load_order": [
+    "Si/202609062358-substation-intelligence-v9-63.js",
+    "Si/202609031958-menu-bar.js",
+    "Si/202609040045-ventus-corev8engine-deep-link-receiver.js",
+    "Si/ventus-corev8engine.js",
+    "Si/ventus-corev7engine.js",
+    "Vn/nearest-search.mjs",
+    "Vn/v9-nearest-search.js",
+    "Ug/202609071213-place-global-search-v9-5.js",
+    "Ug/202609040229-place-global-search-arrival-identity.js",
+    "Ug/202609041945-place-global-search-v9-5.js",
+    "Ug/202609052028-uk-gazetteer-flyto.js",
+    "Ug/202608301136-place-postcode-search.js",
+    "Ug/202608291818-place-postcode-search.js",
+    "Ug/v9-parquet-fetch-bridge.js",
+    "Ps/202609071213-place-global-search-v9-5.js",
+    "Ps/202609040219-transit-layer-availability.browser.mjs",
+    "Ps/202609040229-arrival-identity.browser.mjs",
+    "Ps/202608282348-verify-v9-6-2-equivalence.mjs",
+    "Dt/review.py",
+    "Dt/202608310050-build-n1-deep-link-candidates.py",
+    "Dt/202608310050-build-repd-ref-index.py",
+    "Dt/202608310050-calibrate-design-freeze.py"
+  ],
   "parts": [
     {
       "kind": "block",
       "symbol": "Si",
       "number": 35,
       "title": "substation-intelligence",
-      "functions": 664,
+      "functions": 663,
       "files": [
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "repd_grid_atlasv3/index.html",
-          "saved": "Si/index.html"
-        },
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "repd_grid_atlasv4/index.html",
-          "saved": "Si/index.html"
-        },
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "repd_grid_atlasv6/ventus-corev6engine.js",
-          "saved": "Si/ventus-corev6engine.js"
-        },
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "repd_grid_atlasv7/ventus-corev7engine.js",
-          "saved": "Si/ventus-corev7engine.js"
-        },
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "repd_grid_atlasv8/ventus-corev8engine.js",
-          "saved": "Si/ventus-corev8engine.js"
-        },
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "testcode/202609060537/atlas/cartridges/202609060537-substation-intelligence.js",
-          "saved": "Si/202609060537-substation-intelligence.js"
-        },
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "ventus-core.js",
-          "saved": "Si/ventus-core.js"
-        },
         {
           "repo": "Ventusltd/gridatlas",
           "commit": "ece848117a6d21b7fccb232557194877698c48a9",
           "path": "atlas/cartridges/202609062358-substation-intelligence-v9-63.js",
           "saved": "Si/202609062358-substation-intelligence-v9-63.js"
+        },
+        {
+          "repo": "Ventusltd/gridatlas",
+          "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+          "path": "atlas/modules/202609031958-menu-bar.js",
+          "saved": "Si/202609031958-menu-bar.js"
+        },
+        {
+          "repo": "Ventusltd/gridatlas",
+          "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+          "path": "atlas/parts/202609040045-ventus-corev8engine-deep-link-receiver.js",
+          "saved": "Si/202609040045-ventus-corev8engine-deep-link-receiver.js"
+        },
+        {
+          "repo": "Ventusltd/gridatlas",
+          "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+          "path": "atlas/releases/202608300453-atlas-v9/ventus-corev8engine.js",
+          "saved": "Si/ventus-corev8engine.js"
+        },
+        {
+          "repo": "Ventusltd/code-generator",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+          "path": "apps/substation-finder/Si/ventus-corev7engine.js",
+          "saved": "Si/ventus-corev7engine.js"
+        },
+        {
+          "repo": "Ventusltd/code-generator",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+          "path": "apps/substation-finder/Si/ventus-corev8engine.js",
+          "saved": "Si/ventus-corev8engine.js"
+        },
+        {
+          "repo": "Ventusltd/globalgrid2050",
+          "commit": "065a39d081f5ba131de4001167a11f5920d1fe93",
+          "path": "repd_grid_atlasv7/ventus-corev7engine.js",
+          "saved": "Si/ventus-corev7engine.js"
+        },
+        {
+          "repo": "Ventusltd/globalgrid2050",
+          "commit": "065a39d081f5ba131de4001167a11f5920d1fe93",
+          "path": "repd_grid_atlasv8/ventus-corev8engine.js",
+          "saved": "Si/ventus-corev8engine.js"
         }
       ]
     },
@@ -393,25 +1063,25 @@
       "files": [
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Vn/nearest-search.mjs",
           "saved": "Vn/nearest-search.mjs"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Vn/v9-nearest-search.js",
           "saved": "Vn/v9-nearest-search.js"
         },
         {
           "repo": "Ventusltd/ventus-grid-engine",
-          "commit": "e3deb3d0546cad0b63f2044a4a0e1af2bd3162d6",
+          "commit": "ba78b600f3004d6873e8f442f296f5b27675cfa7",
           "path": "engine/v9-nearest-search.js",
           "saved": "Vn/v9-nearest-search.js"
         },
         {
           "repo": "Ventusltd/ventus-grid-engine",
-          "commit": "e3deb3d0546cad0b63f2044a4a0e1af2bd3162d6",
+          "commit": "ba78b600f3004d6873e8f442f296f5b27675cfa7",
           "path": "sources/v9-extracts/nearest-search.mjs",
           "saved": "Vn/nearest-search.mjs"
         }
@@ -422,20 +1092,8 @@
       "symbol": "Ug",
       "number": 33,
       "title": "uk-gazetteer-flyto",
-      "functions": 52,
+      "functions": 51,
       "files": [
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "testcode/202609051152/atlas/cartridges/202609041945-place-global-search-v9-5.js",
-          "saved": "Ug/202609041945-place-global-search-v9-5.js"
-        },
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "testcode/202609052023/atlas/cartridges/202609052023-uk-gazetteer-flyto.js",
-          "saved": "Ug/202609052023-uk-gazetteer-flyto.js"
-        },
         {
           "repo": "Ventusltd/gridatlas",
           "commit": "ece848117a6d21b7fccb232557194877698c48a9",
@@ -457,8 +1115,14 @@
         {
           "repo": "Ventusltd/testcode",
           "commit": "e8f6222226a7254ce08091b549803c3c1b92d979",
-          "path": "sandbox/202609051623/atlas/cartridges/202609051623-uk-gazetteer-flyto.js",
-          "saved": "Ug/202609051623-uk-gazetteer-flyto.js"
+          "path": "sandbox/202609052028/atlas/cartridges/202609052028-uk-gazetteer-flyto.js",
+          "saved": "Ug/202609052028-uk-gazetteer-flyto.js"
+        },
+        {
+          "repo": "Ventusltd/code-generator",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+          "path": "apps/substation-finder/Ps/202609040229-place-global-search-arrival-identity.js",
+          "saved": "Ug/202609040229-place-global-search-arrival-identity.js"
         },
         {
           "repo": "Ventusltd/gridatlas",
@@ -471,6 +1135,12 @@
           "commit": "ece848117a6d21b7fccb232557194877698c48a9",
           "path": "atlas/releases/202608300453-atlas-v9/202608291818-place-postcode-search.js",
           "saved": "Ug/202608291818-place-postcode-search.js"
+        },
+        {
+          "repo": "Ventusltd/gridatlas",
+          "commit": "ece848117a6d21b7fccb232557194877698c48a9",
+          "path": "atlas/releases/202608291818-atlas-v9/v9-parquet-fetch-bridge.js",
+          "saved": "Ug/v9-parquet-fetch-bridge.js"
         }
       ]
     },
@@ -489,13 +1159,13 @@
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Ps/202609071213-place-global-search-v9-5.js",
           "saved": "Ps/202609071213-place-global-search-v9-5.js"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Ug/202609071213-place-global-search-v9-5.js",
           "saved": "Ps/202609071213-place-global-search-v9-5.js"
         },
@@ -519,13 +1189,13 @@
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Ps/202609040219-transit-layer-availability.browser.mjs",
           "saved": "Ps/202609040219-transit-layer-availability.browser.mjs"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Ps/202609040229-arrival-identity.browser.mjs",
           "saved": "Ps/202609040229-arrival-identity.browser.mjs"
         }
@@ -543,12 +1213,6 @@
           "commit": "2ffb435d105d3729be764e20f1fce6720d681133",
           "path": "automation/202608310209-hourly-logic-review/review.py",
           "saved": "Dt/review.py"
-        },
-        {
-          "repo": "Ventusltd/globalgrid2050",
-          "commit": "a387cac3aa3f09b8cdd27d3ed8040d661303f127",
-          "path": "scripts/stamp_data_spine_doctrine.py",
-          "saved": "Dt/stamp_data_spine_doctrine.py"
         },
         {
           "repo": "Ventusltd/gridatlas",
@@ -570,21 +1234,27 @@
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Dt/202608310050-build-n1-deep-link-candidates.py",
           "saved": "Dt/202608310050-build-n1-deep-link-candidates.py"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Dt/202608310050-build-repd-ref-index.py",
           "saved": "Dt/202608310050-build-repd-ref-index.py"
         },
         {
           "repo": "Ventusltd/code-generator",
-          "commit": "e1217f540cf7ced342109a87f118627c1330cdbd",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
           "path": "apps/substation-finder/Dt/202608310050-calibrate-design-freeze.py",
           "saved": "Dt/202608310050-calibrate-design-freeze.py"
+        },
+        {
+          "repo": "Ventusltd/code-generator",
+          "commit": "130a182bd4ec84525f985700bab9448921812ba5",
+          "path": "apps/substation-finder/Dt/review.py",
+          "saved": "Dt/review.py"
         }
       ]
     }
